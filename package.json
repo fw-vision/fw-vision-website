@@ -1,0 +1,26 @@
+{
+  "name": "@fwvision/fw-vision-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "@lexingtonthemes/seo": "^0.2.0",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.5",
+    "reading-time": "^1.5.0",
+    "tailwind-scrollbar-hide": "^4.0.0",
+    "tailwindcss": "^4.3.0"
+  }
+}
