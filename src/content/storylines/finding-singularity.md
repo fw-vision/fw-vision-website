@@ -9,7 +9,7 @@ horizons: ["H3", "H4"]
 status: "coming-soon"
 graphId: "sl-finding-singularity"
 cover:
-  url: "../../images/blog/5.jpeg"
+  url: "../../images/blog/topical/finding-singularity.jpg"
   alt: "Precision health toward biological immortality"
 tags: ["health", "longevity", "immortality"]
 ---

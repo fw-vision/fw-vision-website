@@ -4,7 +4,7 @@ author: "francis-wang"
 title: "Knowledge as the Next IP: Context Licensing in the Agentic Economy"
 description: "When AI agents can execute any task given sufficient context, the scarce resource shifts from labour to curated, structured knowledge. The economics of context licensing will define the next era of intellectual property."
 image:
-  url: "../../images/blog/4.jpeg"
+  url: "../../images/blog/topical/context-licensing.jpg"
   alt: "Curated knowledge as intellectual property"
 tags:
   - ai-systems

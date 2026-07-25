@@ -4,8 +4,8 @@ author: "francis-wang"
 title: "Sovereign Innovation: Canada's Position in the AI Infrastructure Race"
 description: "Canada possesses structural advantages in the AI sovereignty race that most policy frameworks overlook: abundant clean energy, geographic distribution, and a regulatory environment designed for institutional trust."
 image:
-  url: "../../images/blog/8.jpeg"
-  alt: "Canadian innovation and sovereignty"
+  url: "../../images/blog/topical/sovereign-compute.jpg"
+  alt: "Sovereign compute infrastructure"
 tags:
   - sovereignty
   - governance

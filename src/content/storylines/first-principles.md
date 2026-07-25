@@ -9,7 +9,7 @@ horizons: ["H2", "H3", "H4"]
 status: "coming-soon"
 graphId: "sl-first-principles"
 cover:
-  url: "../../images/blog/9.jpeg"
+  url: "../../images/blog/topical/first-principles.jpg"
   alt: "Foundational deep-tech research"
 tags: ["deep-tech", "research", "robotics"]
 ---

@@ -11,6 +11,14 @@ allPosts.sort(
 
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
+// Storylines for the third column: showcase first, then a few others.
+const allStorylines = await getCollection("storylines");
+const statusRank = { showcase: 0, active: 1, "coming-soon": 2 };
+allStorylines.sort(
+  (a, b) => (statusRank[a.data.status] ?? 3) - (statusRank[b.data.status] ?? 3)
+);
+const menuStorylines = allStorylines.slice(0, 4);
+
 const sections = [
   {
     title: "FW.VISION",
@@ -27,6 +35,7 @@ const sections = [
     links: [
       { name: "Trajectory Storylines", url: "/storylines" },
       { name: "Lexicon", url: "/lexicon" },
+      { name: "Frameworks", url: "/lexicon" },
       { name: "Scenarios", url: "/scenarios" },
       { name: "Tools", url: "/tools" },
     ],
@@ -122,15 +131,29 @@ const topStories = allPosts.filter((post) => post.data.isTopStory).slice(0, 3);
           variant="textXS"
           class="text-base-900 uppercase font-medium"
         >
-          Frameworks
+          Trajectory Storylines
         </Text>
         <div
-          class="flex flex-col gap-4 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
+          class="flex flex-col gap-3 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
         >
-          <Text tag="p" variant="textXS" class="text-base-600">
-            <a href="/lexicon" class="hover:underline">Explore the FW.VISION Lexicon</a> — proprietary frameworks for institutional foresight architecture.
+          {
+            menuStorylines.map((s) => (
+              <a href={`/storylines/${s.id}`} class="group block">
+                <Text tag="p" variant="textXS" class="text-base-900 font-display font-medium group-hover:text-accent-600">
+                  {s.data.slogan}
+                </Text>
+                <Text tag="p" variant="textXS" class="text-base-500 mt-0.5">
+                  {s.data.horizons.join(" \u00b7 ")}
+                  {s.data.status === "showcase" ? " \u00b7 Showcase" : ""}
+                </Text>
+              </a>
+            ))
+          }
+          <Text tag="a" variant="textXS" href="/storylines" class="text-accent-600 hover:underline mt-1">
+            All storylines &rarr;
           </Text>
         </div>
+      </div>
       </div>
     </div>
   </div>

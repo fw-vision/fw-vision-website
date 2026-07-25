@@ -18,23 +18,7 @@ const frameworks = [
 ---
 
 <BaseLayout>
-  <!-- Tagline band -->
-  <section class="border-b border-base-200">
-    <Wrapper variant="standard" class="py-16">
-      <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
-        Founder-led strategic foresight
-      </Text>
-      <Text tag="h1" variant="displayLG" class="text-base-900 font-display mt-5 max-w-4xl">
-        Designing futures worth actualizing.
-      </Text>
-      <Text tag="p" variant="textBase" class="text-base-600 mt-6 max-w-2xl">
-        FW.VISION explores the underlying possible trajectories of the future, governs strategic
-        funds pursuing them, and assesses ventures with the CITAble framework to ensure strategic
-        alignment of futures.
-      </Text>
-    </Wrapper>
-  </section>
-
+  <!-- Featured stories lead the page (newspaper front) -->
   <section>
     <Wrapper variant="standard" class="py-12">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
@@ -58,8 +42,29 @@ const frameworks = [
     </Wrapper>
   </section>
 
+  <!-- Mission / tagline: interim panel (demoted from hero) -->
+  <section class="border-y border-base-200 bg-base-100">
+    <Wrapper variant="standard" class="py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:items-baseline">
+        <div>
+          <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+            Founder-led strategic foresight
+          </Text>
+          <Text tag="h2" variant="displaySM" class="text-base-900 font-display mt-3">
+            Designing futures worth actualizing.
+          </Text>
+        </div>
+        <Text tag="p" variant="textSM" class="text-base-600 lg:col-span-2 max-w-2xl">
+          FW.VISION explores the underlying possible trajectories of the future, governs strategic
+          funds pursuing them, and assesses ventures with the CITAble framework to ensure strategic
+          alignment of futures.
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+
   <!-- Frameworks showcase -->
-  <section class="border-t border-base-200 bg-base-100">
+  <section class="border-b border-base-200 bg-base-100">
     <Wrapper variant="standard" class="py-16">
       <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
         The frameworks

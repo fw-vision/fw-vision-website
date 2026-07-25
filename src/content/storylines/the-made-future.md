@@ -9,7 +9,7 @@ horizons: ["H1", "H2", "H3"]
 status: "coming-soon"
 graphId: "sl-made-future"
 cover:
-  url: "../../images/blog/7.jpeg"
+  url: "../../images/blog/topical/made-future.jpg"
   alt: "Advanced manufacturing and industry"
 tags: ["industry", "manufacturing", "automation"]
 ---

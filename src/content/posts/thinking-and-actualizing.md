@@ -4,8 +4,8 @@ pubDate: 2026-07-20
 author: "francis-wang"
 description: "FW.VISION explores the underlying possible trajectories of the future. SyncID Labs hosts the ventures and funds that actualize the ones worth building. Both run on the same intellectual property: Hybrid Intelligence and the CITAble assessment."
 image:
-  url: "../../images/blog/3.jpeg"
-  alt: "Two connected paths representing thinking and actualizing"
+  url: "../../images/blog/topical/thinking-actualizing.jpg"
+  alt: "Thinking and actualizing"
 tags:
   - foresight
   - governance

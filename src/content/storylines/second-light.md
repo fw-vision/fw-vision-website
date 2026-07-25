@@ -9,7 +9,7 @@ horizons: ["H4"]
 status: "coming-soon"
 graphId: "sl-second-light"
 cover:
-  url: "../../images/blog/13.jpeg"
+  url: "../../images/blog/topical/second-light.jpg"
   alt: "A multi-planetary species reaching outward"
 tags: ["kardashev", "space", "multi-planetary"]
 ---

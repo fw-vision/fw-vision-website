@@ -9,7 +9,7 @@ horizons: ["H2", "H3"]
 status: "showcase"
 graphId: "sl-sovereign-canada"
 cover:
-  url: "../../images/blog/1.jpeg"
+  url: "../../images/blog/topical/sovereign-canada.jpg"
   alt: "Canada as a sovereign global economic leader"
 tags: ["sovereignty", "canada", "compute", "energy", "industry"]
 ---

@@ -9,7 +9,7 @@ horizons: ["H3", "H4"]
 status: "coming-soon"
 graphId: "sl-first-light"
 cover:
-  url: "../../images/blog/11.jpeg"
+  url: "../../images/blog/topical/first-light.jpg"
   alt: "Planetary unity and energy mastery"
 tags: ["kardashev", "energy", "unity", "sdg"]
 ---
