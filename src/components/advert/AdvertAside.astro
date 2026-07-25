@@ -1,20 +1,25 @@
 ---
-import { Image } from "astro:assets";
-import advertAside from "@/images/assets/advertAside.svg";
+// FW.VISION self-promotion card (replaces the template's Lexington ad slot).
+// Aside placement: subscribe to the foresight brief.
+import Text from "@/components/fundations/elements/Text.astro";
 ---
-<div
-class="relative w-full overflow-hidden rounded-xl mt-6 flex items-end"
->
-<a
-  href="https://lexingtonthemes.com/"
-  title="link to https://lexingtonthemes.com/"
-  class="absolute inset-0 z-10"></a>
 
-<Image
-  src={advertAside}
-  alt="#_"
-  width={1000}
-  height={1000}
-  class="w-full h-full object-cover aspect-square lg:aspect-auto object-bottom lg:object-center"
-/>
+<div class="relative w-full overflow-hidden rounded-xl mt-6 bg-base-950 p-6">
+  <Text tag="p" variant="textXS" class="uppercase tracking-[0.18em] text-accent-400 font-medium">
+    Subscribe to Signals
+  </Text>
+  <Text tag="h3" variant="textLG" class="text-white font-display font-medium mt-3">
+    Foresight, in your inbox.
+  </Text>
+  <Text tag="p" variant="textXS" class="text-base-400 mt-2">
+    A weekly brief on emerging futures, innovation frameworks, and the signals that move our
+    trajectory storylines.
+  </Text>
+  <a
+    href="/subscribe"
+    class="mt-4 inline-flex items-center px-4 py-2 text-xs font-medium text-white rounded-lg"
+    style="background-color: var(--color-accent-700);"
+  >
+    Subscribe
+  </a>
 </div>

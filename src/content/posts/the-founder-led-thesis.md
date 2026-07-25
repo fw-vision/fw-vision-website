@@ -3,6 +3,9 @@ pubDate: 2026-07-07
 author: "francis-wang"
 title: "The Founder-Led Thesis: Why AI-Native Institutions Will Outperform"
 description: "AI enables companies of tens to outperform companies of thousands. The structural advantage is not automation; it is the elimination of coordination overhead that dilutes founding intent."
+image:
+  url: "../../images/blog/19.jpeg"
+  alt: "Founder-led AI-native institution"
 tags:
   - foresight
   - institutional-design

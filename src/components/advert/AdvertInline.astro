@@ -1,20 +1,30 @@
 ---
-import { Image } from "astro:assets";
-import advertInline from "@/images/assets/advertInline.svg";
+// FW.VISION self-promotion card (replaces the template's Lexington ad slot).
+// Inline placement: explore the frameworks / storylines.
+import Text from "@/components/fundations/elements/Text.astro";
 ---
-<div
-class="relative w-full overflow-hidden rounded-xl mt-6 fadvertInline items-end"
->
-<a
-  href="https://advertInlineingtonthemes.com/"
-  title="link to https://advertInlineingtonthemes.com/"
-  class="absolute inset-0 z-10"></a>
 
-<Image
-  src={advertInline}
-  alt="#_"
-  width={1000}
-  height={1000}
-  class="w-full h-full object-cover aspect-square lg:aspect-auto object-bottom lg:object-center"
-/>
+<div class="relative w-full overflow-hidden rounded-xl mt-6 border border-base-200 bg-base-100 p-6">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center">
+    <div>
+      <Text tag="p" variant="textXS" class="uppercase tracking-[0.18em] font-medium" style="color: var(--color-accent-600);">
+        Trajectory Storylines
+      </Text>
+      <Text tag="h3" variant="textLG" class="text-base-900 font-display font-medium mt-2">
+        The futures within our range of concern.
+      </Text>
+      <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+        Named preferred trajectories, their off-ramps, and the Foresight Scope that renders them.
+      </Text>
+    </div>
+    <div class="md:text-right">
+      <a
+        href="/storylines"
+        class="inline-flex items-center px-4 py-2 text-xs font-medium text-white rounded-lg"
+        style="background-color: var(--color-accent-700);"
+      >
+        Explore storylines &rarr;
+      </a>
+    </div>
+  </div>
 </div>
