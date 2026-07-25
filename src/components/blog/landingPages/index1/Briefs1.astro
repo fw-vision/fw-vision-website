@@ -2,34 +2,35 @@
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 // Entries
-import BlogCard1 from "@/components/blog/BlogCard1.astro";
+import BlogCard5 from "@/components/blog/BlogCard5.astro";
 // Get all posts
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => {
-  const dateA = new Date(a.data.pubDate).getTime(); // Convert to timestamp
-  const dateB = new Date(b.data.pubDate).getTime(); // Convert to timestamp
-  return dateB - dateA; // Compare timestamps
+  const dateA = new Date(a.data.pubDate).getTime();
+  const dateB = new Date(b.data.pubDate).getTime();
+  return dateB - dateA;
 });
+
+// Briefs: posts marked isBrief, excluding anything already featured or in top stories
+const briefs = allPosts
+  .filter((post) => post.data.isBrief && !post.data.isFeatured && !post.data.isTopStory)
+  .slice(0, 4);
 ---
 
-<div>
-  <Text
-    tag="h2"
-    variant="textXS"
-    href="/blog/briefs"
-    class="text-base-900 uppercase font-medium"
-  >
-    Briefs
-  </Text>
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
-  >
-    {
-      allPosts
-        .filter((post) => post.data.isBrief)
-        .slice(0, 3)
-        .map((post) => <BlogCard1 post={post} />)
-    }
+{briefs.length > 0 && (
+  <div>
+    <Text
+      tag="h2"
+      variant="textXS"
+      class="text-base-900 uppercase font-medium"
+    >
+      Signal Briefs
+    </Text>
+    <div
+      class="flex flex-col gap-4 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
+    >
+      {briefs.map((post) => <BlogCard5 post={post} />)}
+    </div>
   </div>
-</div>
+)}

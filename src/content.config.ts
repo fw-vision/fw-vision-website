@@ -47,7 +47,7 @@ const posts = defineCollection({
       image: z.object({
         url: image(),
         alt: z.string(),
-      }),
+      }).optional(),
       tags: z.array(z.string()),
       // Content flags for homepage layout
       isBreaking: z.boolean().optional(),   // Signal Alert — urgent foresight signal

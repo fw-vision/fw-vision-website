@@ -1,6 +1,4 @@
 ---
-// Assets
-import { Image } from "astro:assets";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
@@ -13,19 +11,12 @@ const allPosts = await getCollection("posts");
 // Extract tags from all posts and count occurrences
 const tagCounts = allPosts.reduce((acc, post) => {
   post.data.tags.forEach((tag) => {
-    acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
+    acc[tag] = (acc[tag] || 0) + 1;
   });
   return acc;
 }, {});
 // Extract unique tags for display
 const tags = Object.keys(tagCounts);
-// Function to get the image for a specific tag
-function getTagImage(tag) {
-  const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
-  if (filteredPosts.length > 0) {
-    return filteredPosts[0].data.image.url; // Return the image of the first post with that tag
-  }
-}
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -34,7 +25,7 @@ function getTagImage(tag) {
       <Text
         tag="h2"
         variant="textXS"
-        class="text-base-900 uppercase font-medium">All tags</Text
+        class="text-base-900 uppercase font-medium">All Domains</Text
       >
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
@@ -43,21 +34,18 @@ function getTagImage(tag) {
           tags.map((tag) => (
             <div class="relative flex flex-col group">
               <a href={`/blog/tags/${tag}`} class="absolute inset-0 z-10" />
-              {/* Display the image next to the tag */}
-              <Image
-                width={800}
-                height={800}
-                src={getTagImage(tag)}
-                alt={`${tag} icon`}
-                class="object-cover w-full aspect-12/8 rounded-xl"
-              />
+              <div class="w-full aspect-12/8 rounded-xl bg-gradient-to-br from-accent-800 to-accent-950 flex items-center justify-center">
+                <Text tag="span" variant="displayMD" class="text-white/20 font-display uppercase">
+                  {tag.replace(/-/g, " ")}
+                </Text>
+              </div>
               <div class="mt-2">
                 <Text
                   tag="h3"
                   variant="textBase"
                   class="flex items-start capitalize font-medium justify-between gap-4 mt-1 text-base-900 group-hover:underline font-display"
                 >
-                  {tag}
+                  {tag.replace(/-/g, " ")}
                   <Text tag="span" variant="textXS" class="text-base-600">
                     ({tagCounts[tag]})
                   </Text>

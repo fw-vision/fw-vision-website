@@ -1,71 +1,76 @@
 ---
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Icons
 import CheckCircleIcon from "@/components/fundations/icons/CheckCircle.astro";
-// Pricing cards
-const pricingCards = [
+
+const engagementTiers = [
   {
-    title: "Basic Membership",
-    description: "Enjoy limited access to premium content.",
-    price: "$5/month",
+    title: "Signals",
+    description: "Cross-domain futures analysis, framework previews, and signal alerts delivered to your inbox.",
+    price: "Complimentary",
     buttonVariant: "muted",
+    buttonText: "Subscribe",
+    href: "#newsletter",
   },
   {
-    title: "Premium Membership",
-    description: "Get access to all premium content and more.",
-    price: "$15/month",
+    title: "Research Access",
+    description: "Workshop engagements and structured consulting. Proprietary methodology applied to your organisational context.",
+    price: "Contact for details",
     buttonVariant: "accent",
+    buttonText: "Enquire",
+    href: "mailto:francis.wang@fw.vision?subject=Research%20Access%20Enquiry",
   },
   {
-    title: "Pro Membership",
-    description: "All the perks of Premium, plus early access to content.",
-    price: "$25/month",
+    title: "Governance Partnership",
+    description: "Retained long-horizon advisory. Strategic fund governance architecture, institutional foresight integration, and ongoing scenario analysis.",
+    price: "Bespoke engagement",
     buttonVariant: "muted",
+    buttonText: "Enquire",
+    href: "mailto:francis.wang@fw.vision?subject=Governance%20Partnership%20Enquiry",
   },
 ];
-// Member benefits
-const memberBenefits = [
-  "Exclusive content and resources",
-  "Access to private community forums",
-  "Early access to new articles, podcasts, and videos",
-  "Special discounts on merchandise and events",
-  "Priority customer support",
-  "Exclusive invites to events and webinars",
-  "Ad-free browsing experience",
-  "Access to members-only newsletter",
-  "Customized content recommendations",
-  "Free access to premium webinars and workshops",
+
+const workshops = [
+  {
+    title: "Agentic AI Maturity Assessment",
+    description: "Most organisations stall at AI tooling adoption without crossing the chasm into agentic operations. This structured assessment evaluates organisational readiness across six dimensions (Leadership, Talent, Data, Infrastructure, Governance, Culture) using the AI Adoption Maturity Model. Identifies the specific barriers preventing your organisation from progressing from Tier 1 (tool-assisted) through Tier 2 (augmented workflows) to Tier 3 (fully agentic operations). Delivers a prioritised roadmap for crossing the chasm.",
+  },
+  {
+    title: "Business Process Mapping for AI Integration",
+    description: "Event Storming and Domain-Driven Design methodology applied to cross-department workflow visualisation. Maps past-tense events, triggers, handoffs, and bounded contexts into an interactive process map. Identifies automation candidates, friction points, and AI-integration opportunities. Produces agent delegation specifications with clear contracts between human and AI responsibilities.",
+  },
+  {
+    title: "Policy-as-Code Design",
+    description: "Encoding governance rules, operational boundaries, and strategic constraints into machine-readable policy. Enables AI agents to execute within founding intent without continuous human supervision. Covers rule specification, exception handling, audit trails, and evolution protocols. Produces versioned, testable governance artifacts.",
+  },
+  {
+    title: "Agent Fleet Composition",
+    description: "Designing the AI workforce: which agents, what specialisations, how they coordinate, what they report on, how they evolve. Tailored to the organisation's operational structure and strategic needs. Covers agent role definition, skill architecture, orchestration patterns, quality assurance, and fleet evolution cycles.",
+  },
 ];
-// FAQ questions and answers
+
 const faqData = [
   {
-    question: "What is the membership fee?",
-    answer:
-      "The membership fee for basic access is $5/month. For premium access, it is $15/month, and for Pro access, it is $25/month.",
+    question: "What is the typical engagement timeline?",
+    answer: "Assessment engagements are typically 1-2 days. Workshop series run 3-6 sessions over 4-8 weeks. Governance partnerships are retained annually with quarterly review cycles.",
   },
   {
-    question: "How can I cancel my membership?",
-    answer:
-      "You can cancel your membership at any time by going to your account settings and selecting the 'Cancel Subscription' option.",
+    question: "Is published research gated behind a subscription?",
+    answer: "All FW.VISION research, frameworks, and lexicon entries are published openly. The Signals newsletter delivers curated analysis directly. Consulting engagements apply proprietary methodology to your specific context.",
   },
   {
-    question: "What benefits do I get with a premium membership?",
-    answer:
-      "Premium members get access to all premium content, early access to new releases, ad-free browsing, and exclusive offers.",
+    question: "How does the workshop series connect?",
+    answer: "The Maturity Assessment establishes baseline and roadmap. Process Mapping identifies where AI integration adds most value. Policy-as-Code encodes governance for those integrations. Fleet Composition designs the agent workforce that operates within those policies. Each workshop builds on the previous, but they can be engaged independently.",
   },
   {
-    question: "Can I upgrade or downgrade my membership?",
-    answer:
-      "Yes, you can upgrade or downgrade your membership at any time from your account settings. Adjustments to your subscription will take effect immediately.",
+    question: "What industries does FW.VISION work with?",
+    answer: "The frameworks are sector-agnostic but particularly relevant for strategic funds, policy organisations, innovation agencies, venture studios, and any knowledge-intensive institution seeking to operationalise AI at the governance level rather than just the productivity level.",
   },
   {
-    question: "Is there a free trial available?",
-    answer:
-      "Yes, we offer a 7-day free trial for the Premium membership. You can cancel anytime during the trial period without any charges.",
+    question: "How does FW.VISION differ from traditional AI consultancies?",
+    answer: "Traditional AI consultancies implement tools. FW.VISION architects governance. The distinction: tool implementation asks 'what AI can we deploy?' Governance architecture asks 'how do we encode institutional intent so AI operates within it?' The output is not a deployed model but an organisational operating system.",
   },
 ];
 ---
@@ -81,15 +86,14 @@ const faqData = [
               variant="textSM"
               class="text-base-900 uppercase font-medium"
             >
-              Become a Member
+              Engage with FW.VISION
             </Text>
             <Text
               tag="p"
               variant="textSM"
               class="text-base-600 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
             >
-              Join our community and enjoy exclusive benefits, premium content,
-              and more.
+              Consulting workshops, governance advisory, and institutional foresight infrastructure. All published research is freely accessible.
             </Text>
           </div>
         </div>
@@ -101,7 +105,7 @@ const faqData = [
         >
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
             {
-              pricingCards.map((card) => (
+              engagementTiers.map((tier) => (
                 <div class="bg-base-50 p-6 rounded-xl flex flex-col justify-between gap-8">
                   <div>
                     <Text
@@ -109,48 +113,89 @@ const faqData = [
                       variant="textBase"
                       class="font-medium font-display text-base-900"
                     >
-                      {card.title}
+                      {tier.title}
                     </Text>
                     <Text tag="p" variant="textSM" class="text-base-600 mt-1">
-                      {card.description}
+                      {tier.description}
                     </Text>
-                    <Text tag="p" variant="textBase" class=" font-semibold mt-4">
-                      {card.price}
+                    <Text tag="p" variant="textBase" class="font-semibold mt-4 text-base-900">
+                      {tier.price}
                     </Text>
                   </div>
-                  <Button type="button" size="xs" variant={card.buttonVariant}>
-                    Sign Up
+                  <Button isLink type="button" size="xs" variant={tier.buttonVariant} href={tier.href}>
+                    {tier.buttonText}
                   </Button>
                 </div>
               ))
             }
           </div>
+
           <section class="mt-12">
             <Text
-              tag="h1"
+              tag="h2"
               variant="textSM"
               class="text-base-900 uppercase font-medium"
             >
-              Memebrs benefits
+              Workshop Series
             </Text>
-            <ul
-              class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-8 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
+            <Text tag="p" variant="textXS" class="text-base-600 mt-1">
+              Structured engagements that bring organisations from AI tooling adoption across the chasm into agentic operations.
+            </Text>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
             >
               {
-                memberBenefits.map((benefit) => (
-                  <li class="flex items-center gap-1">
-                    <CheckCircleIcon class="size-4 text-base-600 " />
-                    <Text tag="p" variant="textSM" class="text-base-600">
-                      {benefit}
+                workshops.map((workshop, index) => (
+                  <div class="p-4 rounded-lg bg-base-50">
+                    <Text tag="p" variant="textXS" class="text-accent-600 font-medium">
+                      {String(index + 1).padStart(2, '0')}
                     </Text>
-                  </li>
+                    <Text tag="h3" variant="textSM" class="text-base-900 font-medium mt-1">
+                      {workshop.title}
+                    </Text>
+                    <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+                      {workshop.description}
+                    </Text>
+                  </div>
                 ))
               }
-            </ul>
+            </div>
           </section>
+
+          <section class="mt-12" id="newsletter">
+            <Text
+              tag="h2"
+              variant="textSM"
+              class="text-base-900 uppercase font-medium"
+            >
+              Signals Newsletter
+            </Text>
+            <div class="relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2">
+              <Text tag="p" variant="textSM" class="text-base-600">
+                Cross-domain futures analysis, framework updates, and foresight signals. Published when substance warrants it, not on a fixed schedule.
+              </Text>
+              <form class="flex w-full items-end md:w-auto mt-4 gap-2">
+                <div class="flex flex-col w-full max-w-sm">
+                  <label for="email-subscribe" class="text-xs text-base-600">Email address</label>
+                  <div class="mt-1">
+                    <input
+                      type="email"
+                      id="email-subscribe"
+                      required
+                      aria-label="Email address"
+                      autocomplete="email"
+                      class="block w-full h-10 px-4 py-2 text-sm text-accent-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 focus:bg-transparent focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
+                    />
+                  </div>
+                </div>
+                <Button size="sm" variant="accent" type="submit">Subscribe</Button>
+              </form>
+            </div>
+          </section>
+
           <section class="mt-12">
             <Text
-              tag="h1"
+              tag="h2"
               variant="textSM"
               class="text-base-900 uppercase font-medium"
             >
@@ -163,11 +208,11 @@ const faqData = [
                 {
                   faqData.map((faq) => (
                     <details class="select-none">
-                      <summary class="text-base-900 font-medium font-display">
+                      <summary class="text-base-900 font-medium font-display cursor-pointer">
                         {faq.question}
                       </summary>
-                      <div class=" border-t border-base-200 pt-2 pb-8">
-                        <Text tag="h3" variant="textSM" class=" text-base-600">
+                      <div class="border-t border-base-200 pt-2 pb-8">
+                        <Text tag="p" variant="textSM" class="text-base-600">
                           {faq.answer}
                         </Text>
                       </div>
@@ -181,5 +226,4 @@ const faqData = [
       </div>
     </Wrapper>
   </section>
-  
 </BaseLayout>

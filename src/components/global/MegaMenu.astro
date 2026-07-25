@@ -1,15 +1,7 @@
 ---
 import Text from "@/components/fundations/elements/Text.astro";
 import BlogCard1 from "@/components/blog/BlogCard1.astro";
-import PodcastCard4 from "@/components/podcast/PodcastCard4.astro";
 import { getCollection } from "astro:content";
-
-// Fetch collections for mega menu content
-const allPodcasts = await getCollection("podcast");
-allPodcasts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-);
 
 const allPosts = await getCollection("posts");
 allPosts.sort(
@@ -49,9 +41,6 @@ const sections = [
 ];
 
 const topStories = allPosts.filter((post) => post.data.isTopStory).slice(0, 3);
-const featuredPodcasts = allPodcasts
-  .filter((post) => post.data.isFeatured)
-  .slice(0, 3);
 ---
 
 <style>
@@ -117,12 +106,14 @@ const featuredPodcasts = allPodcasts
           variant="textXS"
           class="text-base-900 uppercase font-medium"
         >
-          Top Stories
+          Latest Insights
         </Text>
         <div
           class="flex flex-col gap-4 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
         >
-          {topStories.map((post) => <BlogCard1 post={post} />)}
+          {topStories.length > 0 ? topStories.map((post) => <BlogCard1 post={post} />) : (
+            <Text tag="p" variant="textXS" class="text-base-600">New insights publishing soon.</Text>
+          )}
         </div>
       </div>
       <div class="lg:col-span-2">
@@ -131,12 +122,14 @@ const featuredPodcasts = allPodcasts
           variant="textXS"
           class="text-base-900 uppercase font-medium"
         >
-          Latest episodes
+          Frameworks
         </Text>
         <div
           class="flex flex-col gap-4 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
         >
-          {featuredPodcasts.map((post) => <PodcastCard4 post={post} />)}
+          <Text tag="p" variant="textXS" class="text-base-600">
+            <a href="/lexicon" class="hover:underline">Explore the FW.VISION Lexicon</a> — proprietary frameworks for institutional foresight architecture.
+          </Text>
         </div>
       </div>
     </div>

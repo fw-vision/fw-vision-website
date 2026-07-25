@@ -1,12 +1,69 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getCollection } from "astro:content";
+
+const allTools = await getCollection("tools");
+const statusOrder = { live: 0, beta: 1, planned: 2 };
+allTools.sort((a, b) => (statusOrder[a.data.status] ?? 3) - (statusOrder[b.data.status] ?? 3));
+
+const statusLabel = { live: "Live", beta: "Beta", planned: "Planned" };
 ---
+
 <BaseLayout>
   <section>
     <Wrapper variant="standard" class="py-12">
-      <h1 class="text-3xl font-display text-base-900">Interactive Tools</h1>
-      <p class="text-base-600 mt-4">Data visualizations and strategic canvases — coming soon.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:pr-8">
+          <div class="lg:sticky lg:top-20">
+            <Text tag="h1" variant="textBase" class="text-base-900 font-display font-medium">
+              Interactive Tools
+            </Text>
+            <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+              Interactive visualisations and strategic canvases from the fw-vision-dataviz toolkit.
+              The frameworks, made usable.
+            </Text>
+            <div
+              class="relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-4"
+            >
+              <Text tag="p" variant="textXS" class="text-base-600">
+                {allTools.length} tool{allTools.length === 1 ? "" : "s"}
+              </Text>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-base-200 border border-base-200">
+            {
+              allTools.map((entry) => (
+                <div class="bg-base-50 p-6">
+                  <div class="flex items-center justify-between">
+                    <Text tag="span" variant="textXS" class="uppercase tracking-[0.15em] font-medium text-accent-600">
+                      {statusLabel[entry.data.status] ?? entry.data.status}
+                    </Text>
+                  </div>
+                  <Text tag="h2" variant="textLG" class="text-base-900 font-display font-medium mt-3">
+                    {entry.data.title}
+                  </Text>
+                  <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+                    {entry.data.description}
+                  </Text>
+                </div>
+              ))
+            }
+          </div>
+          <div class="mt-6 border border-dashed border-base-300 bg-base-100 p-6 text-center">
+            <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.15em]" style="color: var(--color-accent-600);">
+              Embed needed
+            </Text>
+            <Text tag="p" variant="textSM" class="text-base-600 mt-2">
+              Interactive dataviz components (Strategy Map, index radar) embed here from the
+              fw-vision-dataviz package once wired.
+            </Text>
+          </div>
+        </div>
+      </div>
     </Wrapper>
   </section>
 </BaseLayout>

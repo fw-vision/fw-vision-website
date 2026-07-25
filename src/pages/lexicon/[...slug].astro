@@ -1,0 +1,87 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const lexiconEntries = await getCollection("lexicon");
+  return lexiconEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:pr-8">
+          <div class="lg:sticky lg:top-20">
+            <a href="/lexicon" class="text-xs text-base-600 hover:text-accent-500">
+              ← Back to Lexicon
+            </a>
+            <div class="mt-4">
+              {entry.data.tags && (
+                <div class="flex flex-wrap gap-1">
+                  {entry.data.tags.map((tag) => (
+                    <Text tag="span" variant="textXS" class="text-base-500 capitalize">
+                      {tag.replace(/-/g, " ")}
+                    </Text>
+                  ))}
+                </div>
+              )}
+            </div>
+            {entry.data.relatedFrameworks && entry.data.relatedFrameworks.length > 0 && (
+              <div class="mt-4">
+                <Text tag="h4" variant="textXS" class="text-base-900 font-medium uppercase">
+                  Related
+                </Text>
+                <div class="mt-1 flex flex-col gap-1">
+                  {entry.data.relatedFrameworks.map((fw) => (
+                    <Text tag="span" variant="textXS" class="text-base-600">
+                      {fw}
+                    </Text>
+                  ))}
+                </div>
+              </div>
+            )}
+            {entry.data.originatedDate && (
+              <div class="mt-4">
+                <Text tag="p" variant="textXS" class="text-base-400">
+                  Originated: {new Date(entry.data.originatedDate).toLocaleDateString("en-US", { year: "numeric", month: "long" })}
+                </Text>
+              </div>
+            )}
+          </div>
+        </div>
+        <div
+          class="lg:col-span-3 lg:pl-8 lg:relative lg:before:absolute lg:after:absolute
+          lg:before:bg-base-950 lg:after:bg-base-950/10 lg:before:top-0
+          lg:before:left-0 lg:before:h-6 lg:before:w-px lg:after:top-8
+          lg:after:bottom-0 lg:after:left-0 after:w-px"
+        >
+          <Text
+            tag="h1"
+            variant="displaySM"
+            class="text-base-900 font-medium font-display"
+          >
+            {entry.data.title}
+          </Text>
+          <Text tag="p" variant="textSM" class="text-base-600 mt-2">
+            {entry.data.description}
+          </Text>
+          <div
+            class="mt-8 prose prose-sm prose-base-600 prose-headings:font-display prose-headings:text-base-900 prose-headings:font-medium prose-a:text-accent-600 max-w-none"
+          >
+            <Content />
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

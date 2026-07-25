@@ -1,12 +1,71 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getCollection } from "astro:content";
+
+const allLexicon = await getCollection("lexicon");
+allLexicon.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
+
 <BaseLayout>
   <section>
     <Wrapper variant="standard" class="py-12">
-      <h1 class="text-3xl font-display text-base-900">Frameworks & Concepts</h1>
-      <p class="text-base-600 mt-4">FW.VISION's proprietary models and conceptual lexicon — coming soon.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:pr-8">
+          <div class="lg:sticky lg:top-20">
+            <Text
+              tag="h1"
+              variant="textBase"
+              class="text-base-900 font-display font-medium"
+            >
+              Lexicon
+            </Text>
+            <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+              Proprietary frameworks and conceptual definitions developed by FW.VISION. Each entry is designed to be citable, composable, and applicable to institutional contexts.
+            </Text>
+            <div
+              class="relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-4"
+            >
+              <Text tag="p" variant="textXS" class="text-base-600">
+                {allLexicon.length} frameworks published
+              </Text>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {
+              allLexicon.map((entry) => (
+                <a
+                  href={`/lexicon/${entry.id}`}
+                  class="group p-4 rounded-lg hover:bg-base-100 transition duration-300"
+                >
+                  <Text
+                    tag="h2"
+                    variant="textBase"
+                    class="text-base-900 font-display font-medium group-hover:text-accent-600"
+                  >
+                    {entry.data.title}
+                  </Text>
+                  <Text tag="p" variant="textXS" class="text-base-600 mt-1">
+                    {entry.data.description}
+                  </Text>
+                  {entry.data.tags && (
+                    <div class="flex gap-2 mt-2">
+                      {entry.data.tags.slice(0, 3).map((tag) => (
+                        <Text tag="span" variant="textXS" class="text-base-400 capitalize">
+                          {tag.replace(/-/g, " ")}
+                        </Text>
+                      ))}
+                    </div>
+                  )}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
     </Wrapper>
   </section>
 </BaseLayout>

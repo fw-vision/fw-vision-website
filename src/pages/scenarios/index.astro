@@ -1,12 +1,70 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getCollection } from "astro:content";
+
+const allScenarios = await getCollection("scenarios");
+allScenarios.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
+
 <BaseLayout>
   <section>
     <Wrapper variant="standard" class="py-12">
-      <h1 class="text-3xl font-display text-base-900">Futures Scenarios</h1>
-      <p class="text-base-600 mt-4">Design fiction and scenario explorations — coming soon.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:pr-8">
+          <div class="lg:sticky lg:top-20">
+            <Text tag="h1" variant="textBase" class="text-base-900 font-display font-medium">
+              Futures Scenarios
+            </Text>
+            <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+              Design fiction, backcasting, and structured scenario narratives exploring futures
+              worth actualizing. Each scenario explores an underlying possible trajectory of the
+              future.
+            </Text>
+            <div
+              class="relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-4"
+            >
+              <Text tag="p" variant="textXS" class="text-base-600">
+                {allScenarios.length} scenario{allScenarios.length === 1 ? "" : "s"} published
+              </Text>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="flex flex-col divide-y divide-base-200 border-y border-base-200">
+            {
+              allScenarios.map((entry) => (
+                <article class="py-6">
+                  <div class="flex flex-wrap items-center gap-3">
+                    {entry.data.timeHorizon && (
+                      <Text tag="span" variant="textXS" class="text-accent-600 font-medium uppercase tracking-[0.15em]">
+                        {entry.data.timeHorizon}
+                      </Text>
+                    )}
+                    {entry.data.scenarioType && (
+                      <Text tag="span" variant="textXS" class="text-base-400 capitalize">
+                        {entry.data.scenarioType.replace("-", " ")}
+                      </Text>
+                    )}
+                    {entry.data.geographicFocus && (
+                      <Text tag="span" variant="textXS" class="text-base-400">
+                        {entry.data.geographicFocus}
+                      </Text>
+                    )}
+                  </div>
+                  <Text tag="h2" variant="displaySM" class="text-base-900 font-display font-medium mt-2">
+                    {entry.data.title}
+                  </Text>
+                  <Text tag="p" variant="textSM" class="text-base-600 mt-3 max-w-2xl">
+                    {entry.data.description}
+                  </Text>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </div>
     </Wrapper>
   </section>
 </BaseLayout>

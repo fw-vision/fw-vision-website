@@ -8,7 +8,7 @@ const { url, title, description, pubDate, image, author, tags } = {
   tags: Astro.props.post.data.tags,
   title: Astro.props.post.data.title,
   author: Astro.props.post.data.author,
-  image: Astro.props.post.data.image.url,
+  image: Astro.props.post.data.image?.url,
   description: Astro.props.post.data.description,
   pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
     year: "numeric",
@@ -31,7 +31,7 @@ const formatAuthorName = (slug) => {
 const formattedAuthor = formatAuthorName(author);
 ---
 
-<article class="relative grid grid-cols-1 md:grid-cols-3 gap-8 w-full group">
+<article class={`relative grid grid-cols-1 ${image ? 'md:grid-cols-3' : ''} gap-8 w-full group`}>
   <a href={url} title={title} class="absolute inset-0 z-10"> </a>
   <div class="flex flex-col h-full justify-between gap-2">
     <div>
@@ -80,13 +80,15 @@ const formattedAuthor = formatAuthorName(author);
       </Text>
     </div>
   </div>
-  <Image
-    src={image}
-    alt={title}
-    width={800}
-    height={800}
-    loading="eager"
-    decoding="async"
-    class="object-cover w-full aspect-16/11 md:col-span-2 rounded-xl order-first md:order-last"
-  />
+  {image && (
+    <Image
+      src={image}
+      alt={title}
+      width={800}
+      height={800}
+      loading="eager"
+      decoding="async"
+      class="object-cover w-full aspect-16/11 md:col-span-2 rounded-xl order-first md:order-last"
+    />
+  )}
 </article>

@@ -7,7 +7,6 @@ import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import ShareButtons from "@/components/fundations/elements/ShareButtons.astro";
 // Sections
-import AdvertAside from "@/components/advert/AdvertAside.astro";
 import BlogAside from "@/components/blog/BlogAside.astro";
 // Entries
 import BlogCard3 from "@/components/blog/BlogCard3.astro";
@@ -108,13 +107,15 @@ const relatedPosts = allPosts.filter((post) =>
               }
             </div>
             <div class="mt-8">
-              <Image
-                width={1000}
-                height={800}
-                src={frontmatter.image.url}
-                alt={frontmatter.image.url}
-                class="w-full aspect-12/6 object-cover col-span-full rounded-xl"
-              />
+              {frontmatter.image?.url && (
+                <Image
+                  width={1000}
+                  height={800}
+                  src={frontmatter.image.url}
+                  alt={frontmatter.image.alt || frontmatter.title}
+                  class="w-full aspect-12/6 object-cover col-span-full rounded-xl"
+                />
+              )}
               <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 mt-4">
                 <div>
                   <ShareButtons
@@ -178,7 +179,6 @@ const relatedPosts = allPosts.filter((post) =>
         >
           <div class="lg:sticky lg:top-10 lg:z-40">
             <BlogAside />
-            <AdvertAside />
           </div>
         </div>
       </div>

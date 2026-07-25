@@ -2,45 +2,123 @@
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
 // Sections: In order of use
 import BlogHero1 from "@/components/blog/landingPages/index1/BlogHero1.astro";
-import Breaking1 from "@/components/blog/landingPages/index1/Breaking1.astro";
 import TopStories1 from "@/components/blog/landingPages/index1/TopStories1.astro";
 import Aside1 from "@/components/blog/landingPages/index1/Aside1.astro";
 import Briefs1 from "@/components/blog/landingPages/index1/Briefs1.astro";
-import TechHighlights from "@/components/blog/landingPages/index1/TechHighlights.astro";
-import Categories1 from "@/components/blog/landingPages/index1/Categories1.astro";
-// Adverts
-import AdvertAside from "@/components/advert/AdvertAside.astro";
-import AdvertInline from "@/components/advert/AdvertInline.astro";
+
+const frameworks = [
+  { name: "CITAble Business Index", href: "/lexicon/citable-business-index", blurb: "The integrating measure of a future-proof venture." },
+  { name: "Hybrid Intelligence", href: "/lexicon/hybrid-intelligence", blurb: "Human-centric, agentic scale as an operating model." },
+  { name: "APPETITE Model", href: "/lexicon/appetite-model", blurb: "Eight-dimension futures scenario analysis." },
+  { name: "Strategy CITEMap", href: "/lexicon/strategy-citemap", blurb: "The CITAble bands, made visual." },
+];
 ---
 
 <BaseLayout>
+  <!-- Tagline band -->
+  <section class="border-b border-base-200">
+    <Wrapper variant="standard" class="py-16">
+      <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+        Founder-led strategic foresight
+      </Text>
+      <Text tag="h1" variant="displayLG" class="text-base-900 font-display mt-5 max-w-4xl">
+        Designing futures worth actualizing.
+      </Text>
+      <Text tag="p" variant="textBase" class="text-base-600 mt-6 max-w-2xl">
+        FW.VISION explores the underlying possible trajectories of the future, governs strategic
+        funds pursuing them, and assesses ventures with the CITAble framework to ensure strategic
+        alignment of futures.
+      </Text>
+    </Wrapper>
+  </section>
+
   <section>
     <Wrapper variant="standard" class="py-12">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
         <div class="lg:col-span-3 lg:pr-8">
           <BlogHero1 />
           <div class="flex flex-col gap-12 mt-8">
-            <Breaking1 />
             <TopStories1 />
-            <AdvertInline />
           </div>
         </div>
         <div
-          class="lg:pl-8 "
+          class="lg:pl-8"
         >
           <div class="lg:sticky lg:top-10 lg:z-20">
             <Aside1 />
-            <AdvertAside />
           </div>
         </div>
       </div>
       <div class="flex flex-col gap-4 mt-12">
         <Briefs1 />
-        <div class="mt-12"><TechHighlights /></div>
       </div>
     </Wrapper>
   </section>
-  <Categories1 />
+
+  <!-- Frameworks showcase -->
+  <section class="border-t border-base-200 bg-base-100">
+    <Wrapper variant="standard" class="py-16">
+      <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+        The frameworks
+      </Text>
+      <Text tag="h2" variant="displaySM" class="text-base-900 font-display mt-4 max-w-3xl">
+        Open, citable frameworks used daily to think, govern, and assess.
+      </Text>
+      <div class="mt-10 grid grid-cols-1 gap-px bg-base-200 md:grid-cols-2 lg:grid-cols-4">
+        {
+          frameworks.map((f) => (
+            <a href={f.href} class="group bg-base-50 p-6 transition-colors hover:bg-base-100">
+              <Text tag="h3" variant="textBase" class="text-base-900 font-display font-medium">
+                {f.name}
+              </Text>
+              <Text tag="p" variant="textXS" class="text-base-600 mt-3">
+                {f.blurb}
+              </Text>
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-8">
+        <Text tag="a" variant="textXS" href="/lexicon" class="text-accent-600 hover:underline">
+          Explore the full lexicon &rarr;
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+
+  <!-- Thinking and actualizing -->
+  <section class="border-t border-base-200">
+    <Wrapper variant="standard" class="py-16">
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+        <div>
+          <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+            We think
+          </Text>
+          <Text tag="h3" variant="textBase" class="text-base-900 font-display font-medium mt-4">
+            FW.VISION explores the trajectories.
+          </Text>
+          <Text tag="p" variant="textXS" class="text-base-600 mt-3 max-w-md">
+            We formulate and evolve the futures worth actualizing, and judge which ventures are
+            aligned to them through the CITAble Business Index.
+          </Text>
+        </div>
+        <div>
+          <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+            Ventures actualize
+          </Text>
+          <Text tag="h3" variant="textBase" class="text-base-900 font-display font-medium mt-4">
+            Operational partners build them.
+          </Text>
+          <Text tag="p" variant="textXS" class="text-base-600 mt-3 max-w-md">
+            The futures worth building are actualized by ventures and funds that innovate in
+            alignment with the trajectories we theorise. Same intellectual property: Hybrid
+            Intelligence and the CITAble assessment.
+          </Text>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>
