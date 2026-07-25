@@ -25,30 +25,30 @@ const stats = readingTime(Astro.props.post.body);
     <Image
       src={image}
       alt={title}
-      width={800}
-      height={800}
+      width={1200}
+      height={675}
       loading="eager"
       decoding="async"
-      class="object-cover w-full aspect-12/8"
+      class="object-cover w-full aspect-16/9 max-h-[60vh]"
     />
   ) : (
-    <div class="w-full aspect-12/8 bg-gradient-to-br from-accent-800 to-accent-950"></div>
+    <div class="w-full aspect-16/9 max-h-[60vh] bg-gradient-to-br from-accent-800 to-accent-950"></div>
   )}
 
   <div
-    class="absolute inset-0 bg-gradient-to-t from-base-950/80 to-transparent z-10"
+    class="absolute inset-0 bg-gradient-to-t from-base-950/90 via-base-950/30 to-transparent z-10"
   >
   </div>
 
-  <div class="absolute bottom-0 left-0 right-0 z-20 p-4">
+  <div class="absolute bottom-0 left-0 right-0 z-20 p-5 lg:p-6">
     <Text tag="p" variant="textXS" class="text-base-200">
       <time datetime={pubDate}>{pubDate}</time>
-      <span aria-hidden="true">·</span>
+      <span aria-hidden="true">&middot;</span>
       {stats.text}
     </Text>
     <Text
       tag="h3"
-      variant="textXL"
+      variant="displaySM"
       class="mt-1 text-base-50 group-hover:underline font-display text-balance"
     >
       {title}
