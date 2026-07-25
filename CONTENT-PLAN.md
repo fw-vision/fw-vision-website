@@ -18,9 +18,7 @@ Status legend: [ ] to gather · [~] draft exists · [x] done
 
 ---
 
-## 2. Structural gaps (template)
-
-- [ ] **Detail routes for scenarios, tools, podcast.** Lexicon, blog, challenges, and legal have `[...slug].astro` routes; scenarios/tools/podcast only have `index.astro` listings. Seeded entries show in listings but have no detail page. Add `[...slug].astro` mirroring the lexicon pattern.
+## 2. Structural gaps (template)- [ ] **Detail routes for scenarios, tools, podcast.** Lexicon, blog, challenges, and legal have `[...slug].astro` routes; scenarios/tools/podcast only have `index.astro` listings. Seeded entries show in listings but have no detail page. Add `[...slug].astro` mirroring the lexicon pattern.
 - [ ] **Insights collection.** The schema maps the primary article collection to `./src/content/posts` (folder named `insights` in the vault, `posts` in code). Confirm whether a distinct `/insights` route is wanted or whether blog/posts covers it.
 - [ ] **Podcast (0 entries)** and **Contributors (only Francis Wang)**: seed when content exists.
 
@@ -81,3 +79,20 @@ Note: fw-vision-astro is Astro 6; `@fw-vision/widgets` is React 18||19 with an A
 - Stack: Astro 6.3.5 + Tailwind 4 + MDX, Lexington/Phanatik base. Build with `bunx astro build` (bun install layout; `node_modules/astro/astro.js` is not the entry).
 - The site consumes NO shared web-kit package (Option A): FW.VISION and SyncID Labs are related-but-distinct brands with their own fonts and voice. Only the dataviz components (brand-agnostic) are intended for reuse.
 - Voice: editorial-analytical, first-person-plural, The Economist × Stratechery × RAND. Distinct from SyncID's "actualizer" voice and FCWANG's personal-explorer voice.
+
+---
+
+## Trajectory Storylines system (added 2026-07-24)
+
+The foresight model is now live:
+- **Lexicon:** Foresight Scope (rewritten to the four P's + Preferable-as-trajectory), Trajectory Storyline, Horizons of Concern, Scenario Off-Ramp, Navigation Logic.
+- **Storylines collection** (`src/content/storylines/`): 7 storylines. **Sovereign Canada 2075** is the fully-developed showcase (preferred trajectory + off-ramp + navigation logic + live ForesightScope); the other 6 (Finding Singularity, The Living Planet, The Made Future, First Principles, First Light, Second Light) are coming-soon.
+- **Graph layer** (`src/data/foresight-graph/`): typed nodes+edges JSON, precursor to a Postgres graph. `derive.ts` builds ForesightScope data per storyline. See that folder's README for the Postgres path.
+- **Pages:** `/storylines` (horizon-searchable index) + `/storylines/[slug]` (detail with ForesightScope island for the showcase). Also embedded on `/tools`.
+- **ForesightScope widget** upgraded to @fw-vision/widgets 0.2.0: named preferred/off-ramp trajectory polylines, four-P bands, H1-H4 horizons.
+- Canonical vault register: `04_Execute/FW.VISION/context/trajectory-storylines.md`.
+
+### Remaining for storylines
+- [ ] Develop the 6 coming-soon storylines to showcase depth (scenarios, off-ramps, graph nodes) as research matures.
+- [ ] **Navigation gap:** the site nav (home/subscribe/contact/about) does not link the content collections (lexicon, scenarios, tools, storylines, insights). This is a real contributor to the "empty" feel. Expand the primary nav to surface these sections.
+- [ ] Wire scenario/driver/signal detail rendering from the graph once volume grows (or migrate to Postgres).

@@ -1,0 +1,74 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getCollection, render } from "astro:content";
+import { ForesightScope } from "@fw-vision/widgets";
+import "@fw-vision/widgets/style.css";
+import { foresightDataForStoryline } from "@/data/foresight-graph/derive";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("storylines");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const scope = entry.data.graphId ? foresightDataForStoryline(entry.data.graphId) : null;
+const hasScope = scope !== null && (scope?.scenarios?.length ?? 0) > 0;
+---
+
+<BaseLayout>
+  <section class="border-b border-base-200">
+    <Wrapper variant="standard" class="py-12">
+      <a href="/storylines" class="text-xs text-base-600 hover:text-accent-500">
+        &larr; Trajectory Storylines
+      </a>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <Text tag="span" variant="textXS" class="uppercase tracking-[0.15em] font-medium" style="color: var(--color-accent-600);">
+          {entry.data.domainSeries.join(" \u00b7 ")}
+        </Text>
+        <Text tag="span" variant="textXS" class="text-base-400">
+          {entry.data.horizons.join(" \u00b7 ")}
+        </Text>
+      </div>
+      <Text tag="h1" variant="displayMD" class="text-base-900 font-display mt-4 max-w-3xl">
+        {entry.data.slogan}
+      </Text>
+      <Text tag="p" variant="textBase" class="text-base-600 mt-5 max-w-2xl">
+        {entry.data.description}
+      </Text>
+    </Wrapper>
+  </section>
+
+  {
+    hasScope && (
+      <section class="border-b border-base-200 bg-base-100">
+        <Wrapper variant="standard" class="py-12">
+          <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
+            Foresight Scope
+          </Text>
+          <Text tag="p" variant="textSM" class="text-base-600 mt-3 max-w-2xl">
+            Scenarios on horizon rings by likelihood (probable, plausible, possible, preposterous).
+            The bold line is the preferred trajectory; the diverging line is the off-ramp.
+          </Text>
+          <div class="mt-6 border border-base-200 bg-base-50" style="height: 620px;">
+            <ForesightScope client:only="react" data={scope} />
+          </div>
+        </Wrapper>
+      </section>
+    )
+  }
+
+  <section>
+    <Wrapper variant="standard" class="py-12">
+      <Wrapper variant="prose" class="text-base text-base-700 max-w-2xl mx-auto">
+        <Content />
+      </Wrapper>
+    </Wrapper>
+  </section>
+</BaseLayout>
