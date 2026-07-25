@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from "@astrojs/sitemap";
-import mdx from "@astrojs/mdx"; 
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
@@ -19,5 +20,5 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://fw.vision',
-  integrations: [  sitemap(), mdx()]
+  integrations: [  sitemap(), mdx(), react()]
 });

@@ -38,6 +38,8 @@ Status legend: [ ] to gather · [~] draft exists · [x] done
 ### Podcast
 - [ ] "Futures Conversations" series: even a coming-soon episode 0 with real cover art beats an empty page.
 
+> **Podcast strategy (held in reserve).** We are very unlikely to run full-production podcasts. The realistic model: a weekly touchpoint (solo reflection or interview) discussing trending topics around specific futures, transcribed and cleaned, then rendered as an AI-narrated episode voice-trained on the speakers. Low production, authentic, "AI in the right place." The editorial spine is the FW.VISION Futures Register (`04_Execute/FW.VISION/context/futures-register.md`): each episode reviews which futures moved on the week's signal scans. This same transcript-to-AI-narrated pipeline is a venture candidate, AuthentiCasts (see `04_Execute/FW.VISION/efforts/AuthentiCasts - Venture Concept.md`), and also powers PassiveInfluencer content. Do not build podcast pages out until the touchpoint cadence actually exists.
+
 ---
 
 ## 4. Imagery to gather
