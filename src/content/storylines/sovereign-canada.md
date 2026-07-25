@@ -8,6 +8,9 @@ domainSeries: ["Future of Work", "Future of Industry", "Future of Energy"]
 horizons: ["H2", "H3"]
 status: "showcase"
 graphId: "sl-sovereign-canada"
+cover:
+  url: "../../images/blog/1.jpeg"
+  alt: "Canada as a sovereign global economic leader"
 tags: ["sovereignty", "canada", "compute", "energy", "industry"]
 ---
 

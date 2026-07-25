@@ -8,6 +8,9 @@ domainSeries: ["Climate"]
 horizons: ["H2", "H3", "H4"]
 status: "coming-soon"
 graphId: "sl-living-planet"
+cover:
+  url: "../../images/blog/6.jpeg"
+  alt: "A regenerated, resilient planet"
 tags: ["climate", "terraforming", "regeneration"]
 ---
 

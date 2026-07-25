@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const all = await getCollection("storylines");
@@ -45,27 +46,40 @@ const statusLabel = { showcase: "Showcase", active: "Active", "coming-soon": "Co
           all.map((s) => (
             <a
               href={`/storylines/${s.id}`}
-              class="storyline-card group bg-base-50 p-6 transition-colors hover:bg-base-100"
+              class="storyline-card group bg-base-50 transition-colors hover:bg-base-100 overflow-hidden"
               data-horizons={s.data.horizons.join(",")}
             >
-              <div class="flex items-center justify-between">
-                <Text tag="span" variant="textXS" class="uppercase tracking-[0.15em] font-medium" style="color: var(--color-accent-600);">
-                  {statusLabel[s.data.status] ?? s.data.status}
+              {s.data.cover && (
+                <div class="aspect-12/8 w-full overflow-hidden">
+                  <Image
+                    src={s.data.cover.url}
+                    alt={s.data.cover.alt}
+                    width={800}
+                    height={533}
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+              )}
+              <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <Text tag="span" variant="textXS" class="uppercase tracking-[0.15em] font-medium" style="color: var(--color-accent-600);">
+                    {statusLabel[s.data.status] ?? s.data.status}
+                  </Text>
+                  <Text tag="span" variant="textXS" class="text-base-400">
+                    {s.data.horizons.join(" \u00b7 ")}
+                  </Text>
+                </div>
+                <Text tag="h2" variant="textLG" class="text-base-900 font-display font-medium mt-3">
+                  {s.data.slogan}
                 </Text>
-                <Text tag="span" variant="textXS" class="text-base-400">
-                  {s.data.horizons.join(" \u00b7 ")}
+                <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+                  {s.data.description}
                 </Text>
-              </div>
-              <Text tag="h2" variant="textLG" class="text-base-900 font-display font-medium mt-3">
-                {s.data.slogan}
-              </Text>
-              <Text tag="p" variant="textXS" class="text-base-600 mt-2">
-                {s.data.description}
-              </Text>
-              <div class="mt-4 flex flex-wrap gap-2">
-                {s.data.domainSeries.map((d) => (
-                  <Text tag="span" variant="textXS" class="text-base-400">{d}</Text>
-                ))}
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {s.data.domainSeries.map((d) => (
+                    <Text tag="span" variant="textXS" class="text-base-400">{d}</Text>
+                  ))}
+                </div>
               </div>
             </a>
           ))

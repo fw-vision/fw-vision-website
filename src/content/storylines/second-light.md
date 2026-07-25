@@ -8,6 +8,9 @@ domainSeries: ["Space"]
 horizons: ["H4"]
 status: "coming-soon"
 graphId: "sl-second-light"
+cover:
+  url: "../../images/blog/13.jpeg"
+  alt: "A multi-planetary species reaching outward"
 tags: ["kardashev", "space", "multi-planetary"]
 ---
 

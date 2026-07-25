@@ -156,18 +156,22 @@ const challenges = defineCollection({
 // Trajectory Storylines: named preferred trajectories through scenario sequences (long-form editorials)
 const storylines = defineCollection({
   loader: glob({ pattern: "**/[!_]*.{md,mdx}", base: "./src/content/storylines" }),
-  schema: z.object({
-    title: z.string(),
-    slogan: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date().optional(),
-    author: z.string().default("Francis Wang"),
-    domainSeries: z.array(z.string()).default([]),
-    horizons: z.array(z.string()).default([]),
-    status: z.enum(["showcase", "active", "coming-soon"]).default("coming-soon"),
-    graphId: z.string().optional(),
-    tags: z.array(z.string()).default([]),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      slogan: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date().optional(),
+      author: z.string().default("Francis Wang"),
+      domainSeries: z.array(z.string()).default([]),
+      horizons: z.array(z.string()).default([]),
+      status: z.enum(["showcase", "active", "coming-soon"]).default("coming-soon"),
+      graphId: z.string().optional(),
+      cover: z
+        .object({ url: image(), alt: z.string() })
+        .optional(),
+      tags: z.array(z.string()).default([]),
+    }),
 });
 
 // ─── Export ──────────────────────────────────────────────────────────────────

@@ -8,6 +8,9 @@ domainSeries: ["Deep Tech"]
 horizons: ["H2", "H3", "H4"]
 status: "coming-soon"
 graphId: "sl-first-principles"
+cover:
+  url: "../../images/blog/9.jpeg"
+  alt: "Foundational deep-tech research"
 tags: ["deep-tech", "research", "robotics"]
 ---
 

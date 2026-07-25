@@ -8,6 +8,9 @@ domainSeries: ["Future of Health"]
 horizons: ["H3", "H4"]
 status: "coming-soon"
 graphId: "sl-finding-singularity"
+cover:
+  url: "../../images/blog/5.jpeg"
+  alt: "Precision health toward biological immortality"
 tags: ["health", "longevity", "immortality"]
 ---
 

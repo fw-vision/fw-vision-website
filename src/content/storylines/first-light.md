@@ -8,6 +8,9 @@ domainSeries: ["Future of Energy", "Climate"]
 horizons: ["H3", "H4"]
 status: "coming-soon"
 graphId: "sl-first-light"
+cover:
+  url: "../../images/blog/11.jpeg"
+  alt: "Planetary unity and energy mastery"
 tags: ["kardashev", "energy", "unity", "sdg"]
 ---
 

@@ -8,6 +8,9 @@ domainSeries: ["Future of Industry"]
 horizons: ["H1", "H2", "H3"]
 status: "coming-soon"
 graphId: "sl-made-future"
+cover:
+  url: "../../images/blog/7.jpeg"
+  alt: "Advanced manufacturing and industry"
 tags: ["industry", "manufacturing", "automation"]
 ---
 
