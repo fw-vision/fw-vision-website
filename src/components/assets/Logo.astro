@@ -1,4 +1,25 @@
 ---
-const { class: className = "", ...rest } = Astro.props;
+import { Image } from "astro:assets";
+import fwMark from "@/images/brand/logo.png";
+
+// FW.VISION wordmark: the "FW." image mark inline with "VISION" in League Spartan.
+// The mark scales with the surrounding font-size via h-[1em], so passing a text
+// size on `class` (e.g. lg:text-2xl) sizes both the mark and the "VISION" text.
+// Pass `invert` for dark backgrounds (footer): the dark-ink mark is filtered to light.
+const { class: className = "", invert = false, ...rest } = Astro.props;
 ---
-<span class={`font-brand font-bold tracking-tight ${className}`} {...rest}>FW.VISION</span>
+
+<span class={`inline-flex items-baseline gap-[0.15em] font-brand font-bold tracking-tight ${className}`} {...rest}>
+  <Image
+    src={fwMark}
+    alt="FW."
+    width={908}
+    height={568}
+    class:list={[
+      "h-[0.85em] w-auto translate-y-[0.08em] object-contain",
+      invert && "invert brightness-0",
+    ]}
+    loading="eager"
+  />
+  <span>VISION</span>
+</span>
