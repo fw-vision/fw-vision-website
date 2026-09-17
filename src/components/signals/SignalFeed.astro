@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const { signals } = Astro.props as { signals: CollectionEntry<"posts">[] };
+---
+
+<Wrapper variant="standard" class="pb-16">
+  <div class="divide-y divide-base-200 border-y border-base-200">
+    {signals.map((signal) => (
+      <article class="grid gap-3 py-7 md:grid-cols-[10rem_minmax(0,1fr)]">
+        <div class="text-xs uppercase tracking-wide text-base-500">{signal.data.pubDate.toLocaleDateString("en-CA")}</div>
+        <div>
+          <h2 class="font-display text-2xl text-base-950"><a class="hover:text-accent-700" href={`/signals/${signal.id}/`}>{signal.data.title}</a></h2>
+          <p class="mt-2 text-base-600">{signal.data.description}</p>
+          <p class="mt-3 text-xs text-base-500">{signal.data.sourceRecords?.[0]?.publisher ?? "FW.VISION"}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</Wrapper>

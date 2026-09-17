@@ -9,6 +9,7 @@ image:
 tags:
   - foresight
   - institutional-design
+  - innovation
 isTopStory: true
 isBrief: true
 ---

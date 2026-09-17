@@ -1,11 +1,28 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
+
 export async function GET(context) {
+  const posts = await getCollection("posts");
+  const filteredPosts = posts.filter(post =>
+    post.data.editorialStatus === "published" &&
+    (post.data.contentType === "signal" || post.data.contentType === "column" || post.data.contentType === "analysis" || post.data.contentType === "research")
+  );
+
+  const sortedPosts = [...posts].sort((a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+
   return rss({
-     title: 'Lexington Themes',
-    description: 'Free and premium multipage themes and UI Kits For freelancers, developers, businesses, and personal use.Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customise.',
+    title: 'FW.VISION Signals and Commentary',
+    description: 'Foresight signals, analysis, and commentary from FW.VISION Futures Thinking Inc.',
     site: context.site,
-    items: await pagesGlobToRssItems(
-      import.meta.glob('./blog/*.{md,mdx}'),
-    ),
+    items: sortedPosts.map(post => ({
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      categories: post.data.tags,
+      customData: `<contentType>${post.data.contentType}</contentType>`,
+      link: `/${post.data.contentType === "signal" ? "signals" : post.data.contentType === "column" ? "commentary" : "insights"}/${post.slug}/`,
+    })),
   });
 }

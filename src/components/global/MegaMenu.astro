@@ -2,6 +2,7 @@
 import Text from "@/components/fundations/elements/Text.astro";
 import BlogCard1 from "@/components/blog/BlogCard1.astro";
 import { getCollection } from "astro:content";
+import { formatCategoryLabel, topCategoriesFrom } from "@/data/categories";
 
 const allPosts = await getCollection("posts");
 allPosts.sort(
@@ -9,7 +10,8 @@ allPosts.sort(
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const allTags = allPosts.flatMap((post) => post.data.tags);
+const categories = topCategoriesFrom(allTags);
 
 // Storylines for the third column: showcase first, then a few others.
 const allStorylines = await getCollection("storylines");
@@ -24,6 +26,8 @@ const sections = [
     title: "FW.VISION",
     links: [
       { name: "About", url: "/about" },
+      { name: "Signals", url: "/signals" },
+      { name: "Commentary", url: "/commentary" },
       { name: "Insights", url: "/blog" },
       { name: "Podcast", url: "/podcast" },
       { name: "Contributors", url: "/authors" },
@@ -42,14 +46,19 @@ const sections = [
   },
   {
     title: "Categories",
-    links: tags.map((tag) => ({
-      name: tag.replace(/-/g, " "),
-      url: `/blog/tags/${tag}`,
-    })),
+    links: [
+      ...categories.map((tag) => ({
+        name: formatCategoryLabel(tag),
+        url: `/blog/tags/${tag}`,
+      })),
+      { name: "View all", url: "/blog/tags" },
+    ],
   },
 ];
 
-const topStories = allPosts.filter((post) => post.data.isTopStory).slice(0, 3);
+const topStories = allPosts.filter((post) =>
+  post.data.isTopStory && post.data.editorialStatus === "published"
+).slice(0, 3);
 ---
 
 <style>
@@ -153,7 +162,6 @@ const topStories = allPosts.filter((post) => post.data.isTopStory).slice(0, 3);
             All storylines &rarr;
           </Text>
         </div>
-      </div>
       </div>
     </div>
   </div>

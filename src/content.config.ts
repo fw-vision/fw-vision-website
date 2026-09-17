@@ -34,6 +34,48 @@ const authors = defineCollection({
     }),
 });
 
+// Content Types
+const contentTypeEnum = z.enum(["signal", "column", "analysis", "research"]);
+const localeEnum = z.enum(["en", "zh"]);
+const editorialStatusEnum = z.enum([
+  "draft",
+  "approved-for-preview",
+  "approved-for-publication",
+  "exported",
+  "published"
+]);
+
+// Source Rights Status
+const sourceRightsStatusEnum = z.enum([
+  "owned",
+  "licensed",
+  "fair-dealing-quote",
+  "link-only",
+  "permission-required"
+]);
+
+// Source Record Schema
+const sourceRecordSchema = z.object({
+  publisher: z.string(),
+  title: z.string(),
+  url: z.string().url(),
+  publishedAt: z.coerce.date(),
+  accessedAt: z.coerce.date(),
+  sourceType: z.string().optional(),
+  author: z.string().optional(),
+  updatedAt: z.coerce.date().optional(),
+  archiveUrl: z.string().url().optional(),
+  locator: z.string().optional()
+});
+
+// Rights Record Schema
+const rightsRecordSchema = z.object({
+  status: sourceRightsStatusEnum,
+  copyrightHolder: z.string().optional(),
+  reviewedAt: z.coerce.date().optional(),
+  note: z.string().optional()
+});
+
 // ─── Posts / Insights ────────────────────────────────────────────────────────
 // Primary article collection: foresight analysis, research commentary, signals
 const posts = defineCollection({
@@ -57,6 +99,26 @@ const posts = defineCollection({
       isLocked: z.boolean().optional(),     // Premium/Subscriber content (future)
       // Optional dataviz integration
       datavizEmbed: z.string().optional(),  // URL or component ID for embedded visualization
+
+      // Production signal model fields
+      contentType: contentTypeEnum.optional().default("analysis"),
+      stableId: z.string().optional(),
+      locale: localeEnum.optional().default("en"),
+      translationOf: z.string().optional(),
+      editorialStatus: editorialStatusEnum.optional().default("draft"),
+      publicBylineContributorId: z.string().optional(),
+      editorialApprovalRef: z.string().optional(),
+      sourceRecords: z.array(sourceRecordSchema).optional(),
+      sourceEventDate: z.coerce.date().optional(),
+      sourceUpdatedAt: z.coerce.date().optional(),
+      updateId: z.string().optional(),
+      driverIds: z.array(z.string()).optional().default([]),
+      scenarioIds: z.array(z.string()).optional().default([]),
+      storylineIds: z.array(z.string()).optional().default([]),
+      projectIds: z.array(z.string()).optional().default([]),
+      relatedSignalIds: z.array(z.string()).optional().default([]),
+      responseToSignalIds: z.array(z.string()).optional().default([]),
+      rights: rightsRecordSchema.optional()
     }),
 });
 

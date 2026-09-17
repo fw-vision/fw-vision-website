@@ -8,7 +8,17 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "validate:content": "bun scripts/validate-content.mjs",
+    "test": "bun test",
+    "validate": "bun run validate:content && bun run check && bun run test && bun run build"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/bun": "^1.4.2",
+    "@types/d3": "^7.4.3",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",

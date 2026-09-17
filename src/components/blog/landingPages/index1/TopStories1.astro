@@ -1,12 +1,9 @@
 ---
-// Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-// Icons
 import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
-// Entries
-import BlogCard5 from "@/components/blog/BlogCard5.astro";
-// Get all posts
+import BlogCard3 from "@/components/blog/BlogCard3.astro";
 import { getCollection } from "astro:content";
+
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => {
   const dateA = new Date(a.data.pubDate).getTime();
@@ -14,10 +11,9 @@ allPosts.sort((a, b) => {
   return dateB - dateA;
 });
 
-// Exclude featured posts to avoid duplication with BlogHero1
 const topStories = allPosts
   .filter((post) => post.data.isTopStory && !post.data.isFeatured)
-  .slice(0, 4);
+  .slice(0, 3);
 ---
 
 {topStories.length > 0 && (
@@ -34,9 +30,9 @@ const topStories = allPosts
       >
     </Text>
     <div
-      class="flex flex-col gap-4 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
     >
-      {topStories.map((post) => <BlogCard5 post={post} />)}
+      {topStories.map((post) => <BlogCard3 post={post} />)}
     </div>
   </div>
 )}

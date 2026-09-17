@@ -6,6 +6,9 @@ import { getCollection, render } from "astro:content";
 import readingTime from "reading-time";
 
 export async function getStaticPaths() {
+  // Keep legacy post URLs available for every publication type. Signal and
+  // column cards now point to their canonical routes, but existing links under
+  // /blog/posts/ must continue to resolve during the route transition.
   const blogEntries = await getCollection("posts");
   return blogEntries.map((entry) => ({
     params: { slug: entry.id },

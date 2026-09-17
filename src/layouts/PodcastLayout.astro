@@ -74,7 +74,7 @@ const relatedPosts = allPosts.filter((post) =>
                         height={800}
                         loading="lazy"
                         decoding="async"
-                        src={author.data.image.url}
+                        src={author.data.image.url as any}
                         alt={author.data.image.alt}
                         class="inline-block size-10 object-cover rounded-lg object-center"
                       />

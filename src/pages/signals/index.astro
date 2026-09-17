@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SignalFeed from "@/components/signals/SignalFeed.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+const signals = (await getCollection("posts"))
+  .filter(({ data }) => data.contentType === "signal" && data.editorialStatus === "published")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout>
+  <Wrapper variant="standard" class="py-16 text-center">
+    <p class="text-xs font-semibold uppercase tracking-widest text-accent-700">The evidence layer</p>
+    <h1 class="mt-3 font-display text-5xl text-base-950">Foresight signals</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-xl text-base-600">Source-attributed developments that bear on FW.VISION scenarios and preferred trajectories.</p>
+  </Wrapper>
+  {signals.length > 0 ? <SignalFeed signals={signals} /> : <p class="py-12 text-center text-base-600">No published signals yet.</p>}
+</BaseLayout>

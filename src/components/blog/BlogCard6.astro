@@ -2,9 +2,10 @@
 import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
 import readingTime from "reading-time";
+import { postUrl } from "@/utils/postUrl";
 
 const { url, title, description, pubDate, image, author, tags } = {
-  url: "/blog/posts/" + Astro.props.post.id,
+  url: postUrl(Astro.props.post),
   tags: Astro.props.post.data.tags,
   title: Astro.props.post.data.title,
   author: Astro.props.post.data.author,

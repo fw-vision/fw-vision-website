@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import SourceRecord from "@/components/signals/SourceRecord.astro";
+
+interface Props {
+  entry: CollectionEntry<"posts">;
+  authorName: string;
+}
+
+const { entry, authorName } = Astro.props;
+const { data } = entry;
+---
+
+<BaseLayout>
+  <article>
+    <Wrapper variant="standard" class="py-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent-700">Foresight signal</p>
+      <h1 class="mt-3 max-w-4xl font-display text-4xl font-medium text-base-950 lg:text-6xl">{data.title}</h1>
+      <p class="mt-5 max-w-3xl text-xl text-base-600">{data.description}</p>
+      <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-base-600">
+        <span>Published {data.pubDate.toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" })}</span>
+        <span>By {authorName}</span>
+        {data.sourceEventDate && <span>Observed {data.sourceEventDate.toLocaleDateString("en-CA")}</span>}
+      </div>
+
+      <div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div class="prose prose-slate max-w-none"><slot /></div>
+        <aside class="space-y-6">
+          {data.sourceRecords?.map((source) => <SourceRecord sourceRecord={source} />)}
+          <div class="border-t border-base-200 pt-5">
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-base-900">Foresight context</h2>
+            {data.storylineIds.length > 0 && <p class="mt-3 text-sm text-base-600">Storylines: {data.storylineIds.join(", ")}</p>}
+            {data.scenarioIds.length > 0 && <p class="mt-2 text-sm text-base-600">Scenarios: {data.scenarioIds.join(", ")}</p>}
+            {data.driverIds.length > 0 && <p class="mt-2 text-sm text-base-600">Drivers: {data.driverIds.join(", ")}</p>}
+            {data.projectIds.length > 0 && <p class="mt-2 text-sm text-base-600">Related initiatives: {data.projectIds.join(", ")}</p>}
+          </div>
+        </aside>
+      </div>
+    </Wrapper>
+  </article>
+</BaseLayout>

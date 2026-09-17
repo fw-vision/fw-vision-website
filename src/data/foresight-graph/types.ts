@@ -57,9 +57,30 @@ export interface SignalNode {
   label: string;
   date: string;
   source?: string;
+  // Mark this as derived to avoid duplication
+  meta?: {
+    derived?: boolean;
+    stableId?: string;
+    contentType?: "signal";
+  };
 }
 
 export type ForesightNode = StorylineNode | ScenarioNode | DriverNode | SignalNode;
+
+// Published Signal is derived from content records at build time
+export interface PublishedSignalNode {
+  id: string;
+  signalId: string;
+  title: string;
+  slug: string;
+  pubDate: string;
+  description: string;
+  sourceEventDate?: string;
+  storylineIds: string[];
+  scenarioIds: string[];
+  driverIds: string[];
+  projectIds: string[];
+}
 
 export type EdgeType =
   | "belongs-to" // scenario -> storyline

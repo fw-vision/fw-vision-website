@@ -10,6 +10,7 @@ tags:
   - foresight
   - frameworks
   - future-proofing
+  - innovation
 isTopStory: true
 isFeatured: true
 ---

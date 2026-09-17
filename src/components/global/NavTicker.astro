@@ -2,12 +2,13 @@
 import BlogTicker from "@/components/blog/BlogTicker.astro";
 import { getCollection } from "astro:content";
 
-// Get latest posts for the ticker
 const allPosts = await getCollection("posts");
 allPosts.sort(
   (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
-const latestPosts = allPosts.slice(0, 6);
+const published = allPosts.filter((post) => post.data.editorialStatus === "published");
+const signals = published.filter((post) => post.data.contentType === "signal");
+const latestPosts = (signals.length > 0 ? signals : published.length > 0 ? published : allPosts).slice(0, 6);
 ---
 
 {latestPosts.length > 0 && (

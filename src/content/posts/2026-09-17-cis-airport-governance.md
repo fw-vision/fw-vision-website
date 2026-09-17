@@ -1,0 +1,56 @@
+---
+title: "Airport capital proposal brings governance models into view"
+description: "Ottawa will seek private investment in four major airports while studying international models and consulting workers and communities."
+image:
+  url: "../../images/blog/covers/cis-airport-governance.png"
+  alt: "Flat illustration of converging runway lines"
+author: "francis-wang"
+pubDate: 2026-09-17T10:05:00-04:00
+contentType: "signal"
+stableId: "sig-cbc-cis-2026-09-17-airport-governance-01"
+locale: "en"
+editorialStatus: "published"
+publicBylineContributorId: "francis-wang"
+editorialApprovalRef: "launch-2026-09-17"
+tags: ["canada", "infrastructure", "governance", "investment"]
+relatedSignalIds: ["sig-cbc-cis-2026-09-17-summit-direction-01"]
+sourceRecords:
+  - publisher: "CBC News"
+    title: "'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"
+    url: "https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891"
+    publishedAt: "2026-09-15T19:35:00-04:00"
+    accessedAt: "2026-09-17T10:00:00-04:00"
+    sourceType: "live-thread-recap"
+    updatedAt: "2026-09-15T19:35:00-04:00"
+sourceEventDate: "2026-09-15"
+sourceUpdatedAt: "2026-09-15T19:35:00-04:00"
+updateId: "cbc-cis-2026-09-15-airport-governance"
+driverIds: ["dr-sovereignty", "dr-capital"]
+scenarioIds: ["sc-sc-industry"]
+storylineIds: ["sl-sovereign-canada"]
+projectIds: []
+rights:
+  status: "link-only"
+  copyrightHolder: "CBC News"
+  reviewedAt: "2026-09-17T09:30:00-04:00"
+isBrief: true
+---
+
+## What happened
+
+CBC reported that Canada will seek private investment in its four largest airports. Finance Minister François-Philippe Champagne said the government will consult workers and communities and study global airport-investment models. He noted criticism of the Australian approach, pointed to European models, and said Canadian pension funds already manage airports abroad.
+
+## Why it matters
+
+**Infrastructure governance** determines who holds decision rights over essential logistics systems. FW.VISION treats the proposal as a governance question before it is a financing question: capital structure, accountability, operating control, and public interest must remain visible together.
+
+## Foresight links
+
+- **Drivers**: Sovereignty and patient capital.
+- **Scenario**: Rebuilt industrial capacity.
+- **Storyline**: Sovereign Canada.
+
+## Source record
+
+- **CBC News**: ["'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"](https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891)
+- **Event date**: September 15, 2026. **Source updated**: September 15, 2026, 7:35 PM EDT. **Accessed**: September 17, 2026.

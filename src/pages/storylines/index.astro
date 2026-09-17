@@ -52,7 +52,7 @@ const statusLabel = { showcase: "Showcase", active: "Active", "coming-soon": "Co
               {s.data.cover && (
                 <div class="aspect-12/8 w-full overflow-hidden">
                   <Image
-                    src={s.data.cover.url}
+                    src={s.data.cover.url as any}
                     alt={s.data.cover.alt}
                     width={800}
                     height={533}

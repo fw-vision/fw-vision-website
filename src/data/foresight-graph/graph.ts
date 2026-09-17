@@ -87,6 +87,6 @@ export const foresightGraph: ForesightGraph = {
     // Laddering to meta-trajectories
     { type: "contributes-to", from: "sl-sovereign-canada", to: "sl-first-light" },
     { type: "contributes-to", from: "sl-living-planet", to: "sl-first-light" },
-    { type: "contributes-to", from: "sl-second-light", to: "sl-second-light" },
+    { type: "contributes-to", from: "sl-first-light", to: "sl-second-light" },
   ],
 };

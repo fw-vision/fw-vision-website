@@ -10,6 +10,7 @@ tags:
   - sovereignty
   - governance
   - ai-systems
+  - innovation
 isTopStory: true
 ---
 

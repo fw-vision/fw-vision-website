@@ -1,0 +1,16 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import CommentaryLayout from "@/layouts/CommentaryLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = (await getCollection("posts")).filter(({ data }) => data.contentType === "column" && data.editorialStatus === "published");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const author = await getEntry("authors", entry.data.author);
+const relatedSignals = (await getCollection("posts")).filter(({ data }) => data.contentType === "signal" && Boolean(data.stableId && entry.data.relatedSignalIds.includes(data.stableId)));
+---
+
+<CommentaryLayout entry={entry} authorName={author?.data.name ?? "Francis Wang"} relatedSignals={relatedSignals}><Content /></CommentaryLayout>

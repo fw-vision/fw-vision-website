@@ -1,13 +1,11 @@
 ---
-// Fundations
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import Text from "@/components/fundations/elements/Text.astro";
-// Sections: In order of use
-import BlogHero1 from "@/components/blog/landingPages/index1/BlogHero1.astro";
-import TopStories1 from "@/components/blog/landingPages/index1/TopStories1.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import Aside1 from "@/components/blog/landingPages/index1/Aside1.astro";
+import BlogHero1 from "@/components/blog/landingPages/index1/BlogHero1.astro";
 import Briefs1 from "@/components/blog/landingPages/index1/Briefs1.astro";
+import TopStories1 from "@/components/blog/landingPages/index1/TopStories1.astro";
 
 const frameworks = [
   { name: "CITAble Business Index", href: "/lexicon/citable-business-index", blurb: "The integrating measure of a future-proof venture." },
@@ -18,34 +16,37 @@ const frameworks = [
 ---
 
 <BaseLayout>
-  <!-- Featured stories lead the page (newspaper front) -->
+  <!-- Editorial front: Featured + Latest + sticky Innovation -->
   <section>
-    <Wrapper variant="standard" class="py-12">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
+    <Wrapper variant="standard" class="py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
         <div class="lg:col-span-3 lg:pr-8">
           <BlogHero1 />
-          <div class="flex flex-col gap-12 mt-8">
+          <div class="flex flex-col gap-12 mt-12">
             <TopStories1 />
           </div>
         </div>
         <div
-          class="lg:pl-8"
+          class="lg:pl-8 lg:relative lg:before:absolute lg:after:absolute
+      lg:before:bg-base-950 lg:after:bg-base-950/10 lg:before:top-0
+      lg:before:left-0 lg:before:h-6 lg:before:w-px lg:after:top-8
+      lg:after:bottom-0 lg:after:left-0 after:w-px"
         >
           <div class="lg:sticky lg:top-10 lg:z-20">
             <Aside1 />
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-4 mt-12">
+      <div class="flex flex-col gap-8 mt-16">
         <Briefs1 />
       </div>
     </Wrapper>
   </section>
 
-  <!-- Mission / tagline: interim panel (demoted from hero) -->
+  <!-- Mission / tagline -->
   <section class="border-y border-base-200 bg-base-100">
-    <Wrapper variant="standard" class="py-12">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:items-baseline">
+    <Wrapper variant="standard" class="py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:items-baseline">
         <div>
           <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
             Founder-led strategic foresight
@@ -65,7 +66,7 @@ const frameworks = [
 
   <!-- Frameworks showcase -->
   <section class="border-b border-base-200 bg-base-100">
-    <Wrapper variant="standard" class="py-16">
+    <Wrapper variant="standard" class="py-12 lg:py-16">
       <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">
         The frameworks
       </Text>
@@ -96,7 +97,7 @@ const frameworks = [
 
   <!-- Thinking and actualizing -->
   <section class="border-t border-base-200">
-    <Wrapper variant="standard" class="py-16">
+    <Wrapper variant="standard" class="py-12 lg:py-16">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
           <Text tag="p" variant="textXS" class="text-base-500 uppercase tracking-[0.18em] font-medium">

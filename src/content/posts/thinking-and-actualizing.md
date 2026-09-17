@@ -10,6 +10,7 @@ tags:
   - foresight
   - governance
   - sovereignty
+  - innovation
 isTopStory: true
 ---
 

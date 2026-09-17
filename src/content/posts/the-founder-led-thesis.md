@@ -10,6 +10,7 @@ tags:
   - foresight
   - institutional-design
   - governance
+  - innovation
 isFeatured: true
 ---
 

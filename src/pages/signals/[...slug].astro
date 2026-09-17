@@ -1,0 +1,15 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import SignalLayout from "@/layouts/SignalLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = (await getCollection("posts")).filter(({ data }) => data.contentType === "signal" && data.editorialStatus === "published");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const author = await getEntry("authors", entry.data.author);
+---
+
+<SignalLayout entry={entry} authorName={author?.data.name ?? "FW.VISION Editorial Desk"}><Content /></SignalLayout>

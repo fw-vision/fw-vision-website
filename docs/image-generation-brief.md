@@ -1,77 +1,102 @@
 # FW.VISION — Image Generation Brief
 
-> Prompts for AI image generation (Midjourney, DALL-E, or similar) to replace placeholder/missing images across the site.
+> Prompts for AI image generation (or SVG illustration) to produce post covers across the site.
+> Covers must read as intentional brand art — never photoreal stock or photoreal AI photos.
 
-## Brand Visual Language
+## Cover style (locked)
 
-- **Colour palette:** Burgundy red accent (OKLCH hue 27.20) + neutral slate base
-- **Mood:** Institutional, architectural, restrained, precise
-- **Style:** Abstract geometric, clean lines, minimal. No photorealism. No people.
-- **Aspect ratios:** 12:8 (blog cards), 16:11 (hero cards), 1:1 (OG/social square)
+**Style:** Futuristic flat editorial illustration. Vector-like shapes, limited depth, hard edges or soft geometric planes — not soft photoreal lighting.
+
+**Mood:** Institutional foresight — restrained, precise, architectural. Diagrams, horizons, infrastructure glyphs, orbital/grid motifs, abstract Canada/governance symbols — still **non-literal**.
+
+**Palette:**
+- Burgundy accent (approx `#7A1F2B` / OKLCH hue 27.20)
+- Cool slate neutrals (`#1a1a2e`, `#2a2a3a`, `#94a3b8`)
+- Optional one cool secondary for depth (muted steel blue) — never purple-glow AI defaults
+
+**Composition:** One clear focal motif; ample negative space; legible at thumbnail (`BlogCard1` ~1/3 width) and hero (`BlogCard4`).
+
+### Hard bans
+
+- Photoreal people, hands, faces
+- Offices, handshakes, skylines-as-photos
+- Stock charts, glossy 3D CGI, neon cyberpunk glow
+- Illegible micro-text, logos, or wordmarks inside the art
+
+### Master prompt (paste before every subject)
+
+```
+Flat futuristic editorial illustration for FW.VISION strategic foresight. Vector-like shapes, limited color palette of burgundy red and cool slate neutrals, clean geometric planes, restrained institutional mood, no photorealism, no people, no stock photo aesthetics, no text, no logos. Works as a magazine cover thumbnail.
+```
+
+### Aspect ratios & output
+
+| Use | Ratio | Size | Format | Path |
+|-----|-------|------|--------|------|
+| Blog / signal cards | 12:8 (≈3:2) | 1600×1200 | WebP/PNG | `src/images/blog/covers/` |
+| Hero cards | 16:9 | 1600×900 | WebP/PNG | `src/images/blog/covers/` |
+| OG / social | 1.91:1 | 1200×630 | PNG | `public/og-image.jpg` |
+| Author avatar | 1:1 | 800×800 | JPEG | `src/images/authors/` |
 
 ---
 
-## Required Images
+## Required images
 
-### 1. Default OG / Social Card (1200x630)
+### 1. Default OG / Social Card (1200×630)
 
 **Purpose:** Default social sharing image when no post-specific image exists.
 
-**Prompt direction:** Dark slate background (#1a1a2e). FW.VISION wordmark in League Spartan Bold centred. Subtle burgundy accent line beneath. Clean, typographic, institutional. No illustrations.
+**Prompt direction:** Dark slate background (#1a1a2e). FW.VISION wordmark in League Spartan Bold centred. Subtle burgundy accent line beneath. Clean, typographic, institutional. (Exception: wordmark allowed only on OG default.)
 
 ---
 
-### 2. Blog Post: "The Founder-Led Thesis"
+### 2–6. Analysis covers (existing subjects)
 
-**Prompt direction:** Abstract architectural diagram. Single small bright node (burgundy) connected to a constellation of smaller nodes (varying opacity). Clean dark background. Suggests a small core orchestrating a larger network. Geometric, minimal, no text.
+Use master prompt + subject:
 
----
-
-### 3. Blog Post: "Sovereign Innovation: Canada's Position"
-
-**Prompt direction:** Abstract topographic/geographic lines suggesting northern landscape. Subtle circuit-like overlay. Burgundy accent running through the composition like an energy line. Dark slate tones. Aerial/cartographic feel without being literal.
-
----
-
-### 4. Blog Post: "The 50-Year Return"
-
-**Prompt direction:** Long horizontal timeline visualised as a single precise line stretching across a dark field. Near end: dense cluster of marks (quarterly). Far end: sparse, deliberate marks decades apart. The visual tension between density and space. Burgundy accent on the far-horizon marker.
+| Post | Motif |
+|------|--------|
+| The Founder-Led Thesis | Small burgundy node connected to a constellation of smaller nodes — core orchestrating a network |
+| Sovereign Innovation: Canada's Position | Abstract topographic lines + circuit overlay; burgundy energy line; cartographic without being literal |
+| The 50-Year Return | Single precise timeline; dense marks near, sparse far; burgundy on far-horizon marker |
+| Knowledge as the Next IP | Knowledge graph; burgundy nodes = curated knowledge, dim nodes = raw data |
+| About / CITE bands (optional) | Four horizontal bands in burgundy-to-slate gradients — layered governance |
 
 ---
 
-### 5. Blog Post: "Knowledge as the Next IP"
+### 7. Commentary: Patient Capital (`cis-patient-capital`)
 
-**Prompt direction:** Abstract knowledge graph. Nodes of varying size connected by thin lines. Some nodes glow (burgundy) indicating structured/curated knowledge. Others are dim/grey (raw data). Layered depth suggesting organised context emerging from noise. Dark background.
-
----
-
-### 6. About Page Hero (optional, if design needs it)
-
-**Prompt direction:** Abstract architectural blueprint. Clean lines suggesting institutional structure. Four horizontal bands (evoking CITE layers) in varying burgundy-to-slate gradients. Suggests structural clarity and layered governance.
+**Motif:** Long horizontal capital flow as layered geometric bands stretching into a distant horizon marker (burgundy). Suggests patient time, not money stacks.
 
 ---
 
-### 7. Author Avatar Placeholder
+### 8–17. CIS Signals
 
-**Purpose:** If no real photo of Francis Wang is available for the author profile.
-
-**Note:** Prefer a real photograph. If generating: professional headshot style, warm lighting, dark background, clean collar/jacket. NOT a cartoon or illustration.
+| Signal | Motif |
+|--------|--------|
+| Summit direction | Compass / radial rays from a single burgundy origin on slate field |
+| Meeting transparency | Open geometric lattice / overlapping transparent planes |
+| Trusted partnership | Two interlocking geometric frames sharing a burgundy hinge |
+| US reliance | Twin vertical columns with asymmetric burgundy bridge between them |
+| Comparative advantage | Layered resource strata (abstract bands) with one highlighted vein |
+| Energy superpower | Abstract energy arc / horizon power line in burgundy on slate |
+| Defence industrial strategy | Shield-like geometric plane + industrial grid overlay (non-military literal) |
+| Airport governance | Abstract runway / converging perspective lines into a governance node |
+| Project approvals | Stacked approval gates as flat rectangles with one burgundy unlocked gate |
+| RBC investor interest | Rising geometric steps / capital staircase toward a burgundy apex |
 
 ---
 
-## Image Specifications
+### Author avatar placeholder
 
-| Use | Size | Format | Notes |
-|-----|------|--------|-------|
-| Blog hero (card) | 1600x1200 | WebP/PNG | Astro optimises automatically |
-| OG image | 1200x630 | PNG | Placed in `public/og-image.jpg` |
-| Author avatar | 800x800 | JPEG | Square, `src/images/authors/` |
+Prefer a real photograph. If generating: professional headshot style — **not** the flat cover system.
 
 ---
 
-## Generation Notes
+## Generation notes
 
-- All images should work without text overlay (titles are rendered by the site)
-- Test at small sizes (200x150 thumbnail) — detail should remain legible at card scale
-- Prefer images that read well in both light (white bg) and dark contexts
-- No stock photo aesthetics (no handshakes, no offices, no screens, no charts)
+- All covers work without text overlay (titles are rendered by the site)
+- Test at ~200×150 thumbnail — motif must remain legible at card scale
+- Prefer images that read on white page backgrounds (homepage cards)
+- No stock photo aesthetics
+- Prefer `src/images/blog/covers/{slug}.png` naming aligned to post id

@@ -1,10 +1,9 @@
 ---
-// Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-// Entries
-import BlogCard5 from "@/components/blog/BlogCard5.astro";
-// Get all posts
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import BlogCard1 from "@/components/blog/BlogCard1.astro";
 import { getCollection } from "astro:content";
+
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => {
   const dateA = new Date(a.data.pubDate).getTime();
@@ -12,25 +11,32 @@ allPosts.sort((a, b) => {
   return dateB - dateA;
 });
 
-// Briefs: posts marked isBrief, excluding anything already featured or in top stories
-const briefs = allPosts
-  .filter((post) => post.data.isBrief && !post.data.isFeatured && !post.data.isTopStory)
-  .slice(0, 4);
+const signals = allPosts
+  .filter(
+    (post) =>
+      post.data.contentType === "signal" &&
+      post.data.editorialStatus === "published",
+  )
+  .slice(0, 3);
 ---
 
-{briefs.length > 0 && (
+{signals.length > 0 && (
   <div>
     <Text
-      tag="h2"
+      tag="a"
       variant="textXS"
-      class="text-base-900 uppercase font-medium"
+      href="/signals"
+      class="flex gap-x-2 text-base-900 justify-between uppercase font-medium"
     >
-      Signal Briefs
+      Signals<span
+        class="text-base-600 hover:text-base-900 flex items-center gap-2 normal-case"
+        >See all <ChevronRight class="size-4" /></span
+      >
     </Text>
     <div
-      class="flex flex-col gap-4 mt-2 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
     >
-      {briefs.map((post) => <BlogCard5 post={post} />)}
+      {signals.map((post) => <BlogCard1 post={post} />)}
     </div>
   </div>
 )}

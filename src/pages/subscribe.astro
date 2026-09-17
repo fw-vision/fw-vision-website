@@ -3,7 +3,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import CheckCircleIcon from "@/components/fundations/icons/CheckCircle.astro";
 
 const engagementTiers = [
   {
@@ -11,7 +10,7 @@ const engagementTiers = [
     description: "Cross-domain futures analysis, framework previews, and signal alerts delivered to your inbox.",
     price: "Complimentary",
     buttonVariant: "muted",
-    buttonText: "Subscribe",
+    buttonText: "Newsletter status",
     href: "#newsletter",
   },
   {
@@ -174,22 +173,10 @@ const faqData = [
               <Text tag="p" variant="textSM" class="text-base-600">
                 Cross-domain futures analysis, framework updates, and foresight signals. Published when substance warrants it, not on a fixed schedule.
               </Text>
-              <form class="flex w-full items-end md:w-auto mt-4 gap-2">
-                <div class="flex flex-col w-full max-w-sm">
-                  <label for="email-subscribe" class="text-xs text-base-600">Email address</label>
-                  <div class="mt-1">
-                    <input
-                      type="email"
-                      id="email-subscribe"
-                      required
-                      aria-label="Email address"
-                      autocomplete="email"
-                      class="block w-full h-10 px-4 py-2 text-sm text-accent-700 border border-transparent rounded-lg appearance-none duration-300 bg-base-100 focus:bg-transparent focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-200"
-                    />
-                  </div>
-                </div>
-                <Button size="sm" variant="accent" type="submit">Subscribe</Button>
-              </form>
+              <div class="mt-4 rounded-lg bg-base-100 p-5">
+                <Text tag="p" variant="textSM" class="font-medium text-base-900">Email collection is currently disabled.</Text>
+                <Text tag="p" variant="textXS" class="mt-2 text-base-600">FW.VISION will activate subscriptions after selecting a privacy-reviewed provider with double opt-in and unsubscribe controls. Until then, follow the public <a class="text-accent-700 hover:underline" href="/rss.xml">RSS feed</a> or contact <a class="text-accent-700 hover:underline" href="mailto:francis.wang@fw.vision">francis.wang@fw.vision</a>.</Text>
+              </div>
             </div>
           </section>
 

@@ -122,6 +122,5 @@ export function foresightDataForStoryline(storylineId: string): ForesightScopeDa
     },
     horizons,
     scenarios: scenarioData,
-    trajectories,
   };
 }

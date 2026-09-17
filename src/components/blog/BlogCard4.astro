@@ -2,20 +2,21 @@
 import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
 import readingTime from "reading-time";
+import { postUrl } from "@/utils/postUrl";
 
+const post = Astro.props.post;
 const { url, title, pubDate, image } = {
-  url: "/blog/posts/" + Astro.props.post.id,
-  title: Astro.props.post.data.title,
-  image: Astro.props.post.data.image?.url,
-  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+  url: postUrl(post),
+  title: post.data.title,
+  image: post.data.image?.url,
+  pubDate: new Date(post.data.pubDate).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "2-digit",
   }),
 };
 
-// Calculate reading time
-const stats = readingTime(Astro.props.post.body);
+const stats = readingTime(post.body);
 ---
 
 <article class="relative flex flex-col group overflow-hidden rounded-xl">

@@ -1,33 +1,34 @@
 ---
-// Assets
-// Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-import Button from "../fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Get all posts
 import { getCollection } from "astro:content";
+import { formatCategoryLabel, topCategoriesFrom } from "@/data/categories";
+
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => {
-  const dateA = new Date(a.data.pubDate).getTime(); // Convert to timestamp
-  const dateB = new Date(b.data.pubDate).getTime(); // Convert to timestamp
-  return dateB - dateA; // Compare timestamps
+  const dateA = new Date(a.data.pubDate).getTime();
+  const dateB = new Date(b.data.pubDate).getTime();
+  return dateB - dateA;
 });
-// Tags
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
-// Array
+
+const allTags = allPosts.flatMap((post) => post.data.tags);
+const categories = topCategoriesFrom(allTags);
+
 const sections = [
   {
     title: "FW.VISION",
     links: [
       { name: "About", url: "/about" },
       { name: "Engage", url: "/contact" },
-      { name: "Subscribe", url: "/subscribe" },
+      { name: "Newsletter status", url: "/subscribe" },
     ],
   },
   {
     title: "Research",
     links: [
       { name: "Insights", url: "/blog" },
+      { name: "Signals", url: "/signals" },
+      { name: "Commentary", url: "/commentary" },
       { name: "Trajectory Storylines", url: "/storylines" },
       { name: "Lexicon", url: "/lexicon" },
       { name: "Scenarios", url: "/scenarios" },
@@ -36,12 +37,13 @@ const sections = [
     ],
   },
   {
-    title: "Domains",
+    title: "Categories",
     links: [
-      ...tags.map((tag) => ({
-        name: tag.replace(/-/g, " "),
+      ...categories.map((tag) => ({
+        name: formatCategoryLabel(tag),
         url: `/blog/tags/${tag}`,
       })),
+      { name: "View all", url: "/blog/tags" },
     ],
   },
   {
@@ -59,39 +61,11 @@ const sections = [
   <Wrapper variant="standard" class="py-12">
     <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-12">
       <div class="lg:col-span-2 order-last">
-        <Text
-          tag="h3"
-          variant="textBase"
-          class="text-white font-display font-medium"
-        >Subscribe to <span class="font-brand font-bold tracking-tight">FW.VISION</span></Text
-        >
+        <Text tag="h3" variant="textBase" class="text-white font-display font-medium">FW.VISION publications</Text>
         <Text tag="p" variant="textXS" class="text-base-400 mt-2">
-          Stay ahead of emerging futures. FW.VISION delivers foresight analysis,
-          innovation frameworks, and strategic signals — directly to your inbox.
+          The newsletter is being prepared. Signals, signed commentary, and scenarios remain openly available on this site.
         </Text>
-        <form class="flex w-full items-end md:w-auto mt-4 gap-2">
-          <div class="flex flex-col w-full">
-            <label for="email" class="text-xs text-base-400"
-              >Email address</label
-            >
-            <div class="mt-1">
-              <input
-                type="email"
-                id="email"
-                required
-                aria-label="Email address"
-                autocomplete="email"
-                class="block w-full h-9 px-4 py-2 text-sm text-white border border-transparent rounded-lg appearance-none duration-300 bg-white/10 placeholder-base-400 focus:bg-white/5 focus:outline-none focus:ring-white/10 focus:ring-2 focus:ring-offset-base-950"
-              />
-            </div>
-          </div>
-          <Button size="sm" variant="muted" type="submit" class="flex"
-            >Subscribe</Button
-          >
-        </form>
-        <Text tag="p" variant="textXS" class="mt-1 text-base-400">
-          We won't spam you on weekdays, only on weekends.
-        </Text>
+        <Text tag="a" variant="textXS" href="/subscribe" class="mt-4 inline-block text-white hover:underline">View newsletter status</Text>
       </div>
       <div
         class="grid gap-4 lg:gap-8 grid-cols-2 lg:grid-cols-4 lg:col-span-4 gap-y-12"
@@ -132,7 +106,7 @@ const sections = [
       class="mt-42 lg:mt-62 relative before:absolute after:absolute before:bg-white after:bg-white/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4"
     >
       <Text tag="p" variant="textXS" class="text-base-600">
-        © Copyright FW.VISION {new Date().getFullYear()}. All rights reserved.
+        © {new Date().getFullYear()} FW.VISION Futures Thinking Inc. · 先见之明 远景智库导报 有限公司 · <a class="hover:underline" href="/legal/privacy">Privacy</a> · <a class="hover:underline" href="/legal/terms">Terms</a> · <a class="hover:underline" href="/legal/source-attribution">Editorial standards</a>
       </Text>
     </div>
   </Wrapper>

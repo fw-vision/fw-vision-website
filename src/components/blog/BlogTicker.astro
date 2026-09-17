@@ -1,6 +1,8 @@
 ---
+import { postUrl } from "@/utils/postUrl";
+
 const { post } = Astro.props;
-const url = `/blog/posts/${post.id}`;
+const url = postUrl(post);
 const fullTitle = post.data.title;
 const shortTitle =
   fullTitle.length > 60 ? fullTitle.slice(0, 57) + "..." : fullTitle;

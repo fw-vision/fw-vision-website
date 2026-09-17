@@ -12,11 +12,20 @@ import AudioPlayerScript from "@/components/fundations/scripts/AudioPlayerScript
 // the hideNav and hideFooter props
 // <BaseLayout hideNav={true} hideFooter={true}>
 const { hideNav = false, hideFooter = false } = Astro.props;
+const organisationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "FW.VISION Futures Thinking Inc.",
+  alternateName: ["FW.VISION", "先见之明 远景智库导报 有限公司"],
+  url: "https://fw.vision",
+  email: "francis.wang@fw.vision",
+};
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
+    <script type="application/ld+json" set:html={JSON.stringify(organisationJsonLd)} />
   </head>
   <body class="bg-base-50 flex flex-col min-h-svh">
     {!hideNav && <Navigation />}

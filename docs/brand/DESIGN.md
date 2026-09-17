@@ -117,19 +117,24 @@ Standardized typography via `<Text>` component:
 
 ### Content Flags
 
-Blog posts support these boolean flags that control homepage placement:
-- `isBreaking` → Signals Ticker + Breaking section
-- `isTopStory` → Hero/featured position
-- `isFeatured` → Editor's Pick sidebar
-- `isBrief` → Short-form signal brief (ticker-style)
+Homepage and editorial rails use flags + `contentType` together:
+
+- `isFeatured` → Featured hero (`BlogHero1` / `BlogCard4`)
+- `isTopStory` → Latest illustration grid (excludes featured)
+- `contentType: "signal"` + `editorialStatus: "published"` → Nav ticker + Signals briefs band (`/signals`)
+- `tags: innovation` → Sticky Innovation rail (illustration lead + text list)
+- `isBreaking` → Reserved for urgent alerts (optional Breaking section)
+- `isBrief` → Optional short-form hint; homepage Signals prefer `contentType`
 - `isLocked` → Premium content marker (future)
 
-### Images
+### Imagery
 
+- **Cover style:** Futuristic flat editorial illustration — not photoreal stock or photoreal AI. See [`docs/image-generation-brief.md`](../image-generation-brief.md) for master prompt, palette, and bans.
+- Covers live under `src/images/blog/covers/` (CIS + commentary); legacy topical photos may remain on older analyses.
 - Use Astro's `<Image>` component for optimization
-- Default loading: `loading="lazy"` / `decoding="async"`
-- Blog images: `aspect-4/2` or `aspect-video`
-- Author avatars: `aspect-square rounded-full`
+- Default loading: `loading="lazy"` / `decoding="async"` (eager on above-the-fold cards)
+- Blog / signal cards: `aspect-12/8`; hero: `aspect-16/9`
+- Author avatars: `aspect-square rounded-full` (prefer real photography)
 
 ---
 
@@ -171,5 +176,7 @@ These are not yet implemented in CSS — add as needed when building category vi
 | Footer | `src/components/global/Footer.astro` |
 | Base layout | `src/layouts/BaseLayout.astro` |
 | Content schemas | `src/content.config.ts` |
+| Cover generation brief | `docs/image-generation-brief.md` |
+| Flat covers | `src/images/blog/covers/` |
 | Logos (source) | `src/images/brand/logo.png`, `logo-square.png` |
 | Full brand bible | `FCWANG-Perceptiosphere/04_Execute_Efforts/FW.VISION/.brand/context.md` |

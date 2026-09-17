@@ -10,6 +10,7 @@ tags:
   - ai-systems
   - sovereignty
   - foresight
+  - innovation
 isBrief: true
 ---
 
