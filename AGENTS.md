@@ -9,8 +9,9 @@ This is the **FW.VISION** strategic foresight think tank website. It publishes r
 - **Stack**: Astro 6 + Tailwind CSS 4 + MDX
 - **Template base**: Phanatik (Lexington Themes) — adapted
 - **Design spec**: `docs/brand/DESIGN.md` ← START HERE for colors, fonts, component rules
-- **Brand context** (full): `FCWANG-Perceptiosphere/04_Execute_Efforts/FW.VISION/.brand/context.md`
-- **Workspace map**: `FCWANG-Perceptiosphere/04_Execute_Efforts/.workspace-map.md`
+- **Brand context** (canonical): `../../../04_Execute/FW.VISION/README.md`, `../../../04_Execute/FW.VISION/indicators-strategy/strategy.md`, and `../../../04_Execute/FW.VISION/brand/voice.md`
+- **Workspace manifest**: `../../../04_Execute/FW.VISION/workspace/projects.yaml`
+- **Related repositories**: sibling worktrees `../content-backoffice` and `../fw-vision-dataviz`
 
 ## Architecture Notes
 
