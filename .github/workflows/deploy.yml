@@ -34,8 +34,9 @@ jobs:
         run: bun run test
       - name: Build
         env:
-          PUBLIC_LISTMONK_URL: ${{ vars.PUBLIC_LISTMONK_URL }}
-          PUBLIC_LISTMONK_LIST_UUID: ${{ vars.PUBLIC_LISTMONK_LIST_UUID }}
+          # Fall back when Actions vars are unset/empty so the subscribe form stays enabled.
+          PUBLIC_LISTMONK_URL: ${{ vars.PUBLIC_LISTMONK_URL || 'https://fwvision-elitemini-series.tail0f7891.ts.net' }}
+          PUBLIC_LISTMONK_LIST_UUID: ${{ vars.PUBLIC_LISTMONK_LIST_UUID || '2e695404-3067-4d75-9e09-e618b0b2b39c' }}
         run: bun run build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

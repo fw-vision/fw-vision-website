@@ -4,8 +4,9 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
-const listmonkUrl = (import.meta.env.PUBLIC_LISTMONK_URL ?? "https://fwvision-elitemini-series.tail0f7891.ts.net").replace(/\/$/, "");
-const listmonkListUuid = import.meta.env.PUBLIC_LISTMONK_LIST_UUID ?? "2e695404-3067-4d75-9e09-e618b0b2b39c";
+// Use || so empty GitHub Actions vars still fall back to live defaults (?? only skips null/undefined).
+const listmonkUrl = (import.meta.env.PUBLIC_LISTMONK_URL || "https://fwvision-elitemini-series.tail0f7891.ts.net").replace(/\/$/, "");
+const listmonkListUuid = import.meta.env.PUBLIC_LISTMONK_LIST_UUID || "2e695404-3067-4d75-9e09-e618b0b2b39c";
 const subscribeEnabled = Boolean(listmonkUrl && listmonkListUuid);
 
 const engagementTiers = [
