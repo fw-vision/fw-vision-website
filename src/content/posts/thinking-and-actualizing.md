@@ -4,6 +4,8 @@ pubDate: 2026-07-20
 author: "francis-wang"
 editorialStatus: "published"
 contentType: "analysis"
+stableId: "ana-2026-07-20-thinking-and-actualizing"
+editorialApprovalRef: "launch-2026-09-27"
 description: "FW.VISION explores the underlying possible trajectories of the future. Synchronous I&D Labs Inc. (SyncIDLabs) hosts the ventures and funds that actualize the ones worth building. Both run on the same intellectual property: Hybrid Intelligence and the CITAble assessment."
 image:
   url: "../../images/blog/covers/thinking-and-actualizing.jpg"

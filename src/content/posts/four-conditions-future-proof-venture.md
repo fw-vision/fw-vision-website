@@ -4,6 +4,8 @@ pubDate: 2026-07-22
 author: "francis-wang"
 editorialStatus: "published"
 contentType: "analysis"
+stableId: "ana-2026-07-22-four-conditions-future-proof-venture"
+editorialApprovalRef: "launch-2026-09-27"
 description: "A profitable business is not the same as a future-proof one. FW.VISION assesses ventures against four conditions at once: a real problem, human-centric agentic scale, societal stability, and active futuring. The CITAble Business Index reads all four."
 image:
   url: "../../images/blog/covers/four-conditions-future-proof-venture.jpg"

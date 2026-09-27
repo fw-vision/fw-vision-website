@@ -3,6 +3,8 @@ pubDate: 2026-07-01
 author: "francis-wang"
 editorialStatus: "published"
 contentType: "analysis"
+stableId: "ana-2026-07-01-knowledge-as-the-next-ip"
+editorialApprovalRef: "launch-2026-09-27"
 title: "Knowledge as the Next IP: Context Licensing in the Agentic Economy"
 description: "When AI agents can execute any task given sufficient context, the scarce resource shifts from labour to curated, structured knowledge. The economics of context licensing will define the next era of intellectual property."
 image:
