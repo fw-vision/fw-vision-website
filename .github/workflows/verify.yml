@@ -7,12 +7,17 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.4.2
-      - run: bun install --frozen-lockfile
+      - name: Install dependencies
+        env:
+          # Secret cannot be named GITHUB_* (reserved). Map into the name .npmrc expects.
+          GITHUB_TOKEN_FWVISION: ${{ secrets.FWVISION_NPM_TOKEN }}
+        run: bun install --frozen-lockfile
       - run: bun run validate:content
       - run: bun run check
       - run: bun run test

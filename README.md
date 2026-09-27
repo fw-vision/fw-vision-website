@@ -4,7 +4,7 @@
 
 ## Quick Start
 
-Requires Bun. Private `@fw-vision/*` packages need `GITHUB_TOKEN_FWVISION` in the environment (see `.npmrc`).
+Requires Bun. Private `@fw-vision/*` packages need `GITHUB_TOKEN_FWVISION` in the local environment (see `.npmrc`). In GitHub Actions, store the same PAT as environment secret `FWVISION_NPM_TOKEN` on the `prod` environment (the `GITHUB_` prefix is reserved for secret names); workflows map it into `GITHUB_TOKEN_FWVISION` for install.
 
 ```bash
 bun install
