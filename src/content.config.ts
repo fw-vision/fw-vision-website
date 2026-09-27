@@ -154,11 +154,12 @@ const scenarios = defineCollection({
   schema: z.object({
     title: z.string(),
     pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
     description: z.string(),
     author: z.string().default("Francis Wang"),
     tags: z.array(z.string()).default([]),
     // Scenario-specific fields
-    timeHorizon: z.string().optional(),          // e.g. "2035", "2050", "2075"
+    timeHorizon: z.string().optional(),          // e.g. "2035", "2050", "2080"
     scenarioType: z.string().optional(),         // e.g. "design-fiction", "backcasting", "wild-card"
     geographicFocus: z.string().optional(),      // e.g. "Canada", "Global", "East Asia"
     isFeatured: z.boolean().optional(),
@@ -224,6 +225,7 @@ const storylines = defineCollection({
       slogan: z.string(),
       description: z.string(),
       pubDate: z.coerce.date().optional(),
+      updatedDate: z.coerce.date().optional(),
       author: z.string().default("Francis Wang"),
       domainSeries: z.array(z.string()).default([]),
       horizons: z.array(z.string()).default([]),

@@ -5,7 +5,7 @@ pubDate: 2026-07-24
 originatedDate: 2025-05-01
 author: "francis-wang"
 tags: ["foresight", "frameworks", "futures", "scenario-analysis"]
-relatedFrameworks: ["APPETITE Model", "Strategy CITEMap", "Active Futuring", "CITAble Business Index"]
+relatedFrameworks: ["APPETITE Model", "Active Futuring", "CITAble Business Index"]
 ---
 
 ## Definition

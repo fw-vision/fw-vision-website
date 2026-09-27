@@ -7,23 +7,30 @@ import Text from "@/components/fundations/elements/Text.astro";
 <div class="relative w-full overflow-hidden rounded-xl mt-6 border border-base-200 bg-base-100 p-6">
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center">
     <div>
-      <Text tag="p" variant="textXS" class="uppercase tracking-[0.18em] font-medium" style="color: var(--color-accent-600);">
+      <Text tag="p" variant="textXS" class="uppercase tracking-[0.18em] font-medium text-accent-600">
         Trajectory Storylines
       </Text>
       <Text tag="h3" variant="textLG" class="text-base-900 font-display font-medium mt-2">
-        The futures within our range of concern.
+        The foresight layer for futures worth actualizing.
       </Text>
       <Text tag="p" variant="textXS" class="text-base-600 mt-2">
-        Named preferred trajectories, their off-ramps, and the Foresight Scope that renders them.
+        Scenarios, off-ramps, and the Foresight Scope. Public Canadian advocacy for 2080 lives at Canada2080.
       </Text>
     </div>
-    <div class="md:text-right">
+    <div class="md:text-right flex flex-col items-start md:items-end gap-2">
       <a
-        href="/storylines"
-        class="inline-flex items-center px-4 py-2 text-xs font-medium text-white rounded-lg"
-        style="background-color: var(--color-accent-700);"
+        href="/storylines/sovereign-canada"
+        class="inline-flex items-center px-4 py-2 text-xs font-medium text-white rounded-lg bg-accent-700"
       >
-        Explore storylines &rarr;
+        Sovereign Canada storyline &rarr;
+      </a>
+      <a
+        href="https://canada2080.org/"
+        class="text-xs text-accent-600 hover:underline"
+        target="_blank"
+        rel="noopener"
+      >
+        Canada2080.org
       </a>
     </div>
   </div>

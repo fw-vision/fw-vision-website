@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { postUrl } from '@/utils/postUrl';
 
 export async function GET(context) {
   const posts = await getCollection("posts");
@@ -8,7 +9,7 @@ export async function GET(context) {
     (post.data.contentType === "signal" || post.data.contentType === "column" || post.data.contentType === "analysis" || post.data.contentType === "research")
   );
 
-  const sortedPosts = [...posts].sort((a, b) =>
+  const sortedPosts = [...filteredPosts].sort((a, b) =>
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 
@@ -22,7 +23,7 @@ export async function GET(context) {
       description: post.data.description,
       categories: post.data.tags,
       customData: `<contentType>${post.data.contentType}</contentType>`,
-      link: `/${post.data.contentType === "signal" ? "signals" : post.data.contentType === "column" ? "commentary" : "insights"}/${post.slug}/`,
+      link: postUrl(post),
     })),
   });
 }

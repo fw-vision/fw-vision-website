@@ -2,8 +2,8 @@
 title: "Harper links sovereignty to reduced US reliance"
 description: "Stephen Harper supported walking away from US trade negotiations and argued that separate sovereignty requires lower dependence on the United States."
 image:
-  url: "../../images/blog/covers/cis-us-reliance.png"
-  alt: "Flat illustration of bridged columns"
+  url: "../../images/blog/covers/cis-us-reliance.jpg"
+  alt: "Editorial photograph of twin pylons with a connecting span"
 author: "francis-wang"
 pubDate: 2026-09-17T10:35:00-04:00
 contentType: "signal"
@@ -54,3 +54,5 @@ CBC reported that Stephen Harper supported walking away from US trade negotiatio
 
 - **CBC News**: ["'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"](https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891)
 - **Event date**: September 15, 2026. **Source updated**: September 15, 2026, 7:35 PM EDT. **Accessed**: September 17, 2026.
+
+> Related public initiative: [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory and missions. This site publishes the foresight layer.

@@ -6,7 +6,7 @@
 
 This is the **FW.VISION** strategic foresight think tank website. It publishes research, frameworks, futures scenarios, and podcast content. The founder is Francis Wang.
 
-- **Stack**: Astro 6 + Tailwind CSS 4 + MDX
+- **Stack**: Astro 6 + Tailwind CSS 4 + MDX, developed with Bun (`bun run dev` on `0.0.0.0`)
 - **Template base**: Phanatik (Lexington Themes) — adapted
 - **Design spec**: `docs/brand/DESIGN.md` ← START HERE for colors, fonts, component rules
 - **Brand context** (canonical): `../../../04_Execute/FW.VISION/README.md`, `../../../04_Execute/FW.VISION/indicators-strategy/strategy.md`, and `../../../04_Execute/FW.VISION/brand/voice.md`
@@ -55,6 +55,15 @@ src/
 - The `Text` component standardizes typography variants (textXS, textSM, textBase, etc.)
 - The `Wrapper` component handles max-width containers
 
+## Development and testing
+
+- Interactive development uses `bun run dev`, binding Astro to `0.0.0.0` for trusted Tailnet access.
+- Reach this dev box at `http://100.71.170.90:4321` or `http://fcwang-elitemini-series.tail0f7891.ts.net:4321`.
+- The persistent dev server is user-managed and is not automated verification.
+- Run `bun run check`, `bun run test`, and `bun run build` before handoff (or `bun run validate`).
+- Private `@fw-vision/*` packages require `GITHUB_TOKEN_FWVISION` (see `.npmrc`).
+- Preserve firewall controls and never enable public Funnel access without explicit approval.
+
 ## Working Guidelines
 
 1. **Keep the signals ticker** — it's a core brand element (futures wire service feel)
@@ -62,16 +71,16 @@ src/
 3. **Use `font-brand`** for the FW.VISION wordmark, `font-display` for article headings
 4. **Content flags matter** — `isBreaking`, `isTopStory`, `isFeatured`, `isBrief` control homepage layout
 5. **No JavaScript unless necessary** — Astro islands pattern; JS only for interactivity
-6. **League Spartan** needs to be loaded via font import (Google Fonts or self-hosted) — not yet configured in HTML head
+6. **League Spartan** is loaded via `Fonts.astro` (Google Fonts)
 
 ## Future Work
 
-- [ ] Add League Spartan font loading in BaseLayout head
+- [x] Add League Spartan font loading in BaseLayout head
 - [ ] Migrate content schema from `posts` to `insights` collection
 - [ ] Create `ScenarioLayout.astro` and `LexiconLayout.astro`
 - [ ] Integrate dataviz embeds from `fw-vision-dataviz`
 - [ ] Replace demo content with real FW.VISION articles
 - [ ] Add category domain colors to tag system
 - [ ] Configure RSS feed for insights
-- [ ] Set up newsletter integration (subscribe page)
+- [x] Newsletter: Listmonk Signals form on `/subscribe` (`docs/integrations/listmonk.md`); SMTP confirmation mail still Principal/Admin
 - [ ] Dark mode support

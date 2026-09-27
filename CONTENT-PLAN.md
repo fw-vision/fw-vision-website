@@ -2,19 +2,32 @@
 
 > The FW.VISION think-tank site has a complete visual foundation (Lexington/Phanatik base, burgundy accent, League Spartan / STIX Two Text / Inter Display / Geist Mono typography, a Futures Signals Ticker). This pass enriched it with the recent strategic IP and wired previously-empty pages to their collections. The gaps below are what remains to gather before launch.
 
+**Launch readiness plan (2026-09-27):** [`docs/plans/2026-09-27-fw-vision-launch-readiness.md`](docs/plans/2026-09-27-fw-vision-launch-readiness.md)  
+**Listmonk newsletter:** [`docs/integrations/listmonk.md`](docs/integrations/listmonk.md) · checklist [`docs/plans/2026-09-27-ghost-newsletter-platform.md`](docs/plans/2026-09-27-ghost-newsletter-platform.md)
+
 Status legend: [ ] to gather · [~] draft exists · [x] done
 
 ---
 
 ## 1. What this pass added
 
-- **Homepage bands**: tagline hero ("Designing futures worth actualizing"), a frameworks showcase (CITAble Business Index, Hybrid Intelligence, APPETITE, Strategy CITEMap), and a "we think / ventures actualize" constellation band.
+- **Homepage**: news- and signal-oriented editorial wire (featured, latest, signals, sovereignty, categories). Framework showcase removed from the front page; lexicon holds CITAble Business research.
 - **About**: expanded the frameworks list with the new index IP (CBI, CVI, Agentic Gradient, SRI, Active Futuring); added a "Thinking and Actualizing" section expressing the FW.VISION / operational-partner relationship.
 - **Lexicon (4 new)**: CITAble Business Index, Cognitive Vitality Index, Agentic Gradient, Societal Resilience Index, Active Futuring.
 - **Posts (2 new strategic)**: "The Four Conditions of a Future-Proof Venture", "Thinking and Actualizing".
 - **Scenarios (1)**: "Canada 2075: The Sovereign Innovation Century" (backcast).
-- **Tools (2)**: Strategy Map (CITAble bands visual), CITAble Business Index Explorer.
+- **Tools**: CITAble Business Explorer (beta); Strategy Map / CITEMap listing retired.
 - **Wired** the scenarios and tools index pages to read their collections (they were static "coming soon" placeholders that never surfaced content).
+
+### Ops and imagery pass (2026-09-27)
+
+- [x] Engage location corrected to Toronto / Greater Toronto Area.
+- [x] Duplicate nav Subscribe removed; content links (Insights, Signals, Lexicon, Storylines) added; categories row no longer truncates.
+- [x] Dead newsletter form and membership URLs removed or retargeted.
+- [x] Homepage mission / frameworks / think-actualize bands differentiated to Phanatik patterns (sticky rail, soft cards, dark island).
+- [x] Cover system pivoted to editorial photography; flat-vector covers quarantined for homepage posts. Remaining CIS PNGs to replace as republished.
+- [x] Default `og:image` at `public/og-image.jpg`.
+- [x] Phanatik stock quarantined under `src/images/_quarantine/`.
 
 ---
 
@@ -42,12 +55,12 @@ Status legend: [ ] to gather · [~] draft exists · [x] done
 
 ## 4. Imagery to gather
 
-The template ships ~49 real demo images (numbered blog jpegs, category images). They are generic stock, not on-brand.
+The template shipped ~49 demo images (numbered blog jpegs, category images). Generic stock is now quarantined under `src/images/_quarantine/`.
 
-- [ ] **Replace generic demo blog images** with on-brand imagery (or intentional abstract/editorial art) for the posts that drive the homepage hero and top-stories.
-- [ ] **Post cover images**: the new strategic posts have no `image` frontmatter; add cover art so cards render with visuals.
-- [ ] **Podcast cover art** for Futures Conversations.
-- [ ] **OG/social images** per the brand (League Spartan mark on burgundy).
+- [x] **Replace generic demo blog images** for strategic homepage posts with flat-editorial covers (`src/images/blog/covers/`).
+- [x] **Post cover images** for the six strategic essays.
+- [ ] **Podcast cover art** for Futures Conversations (when episodes exist).
+- [x] **OG/social images** — `public/og-image.jpg` + Seo meta.
 - [x] Founder portrait (`francis-wang.jpg`) present.
 - [x] Logo (`logo.png`, `logo-square.png`) present.
 
@@ -57,8 +70,8 @@ The template ships ~49 real demo images (numbered blog jpegs, category images). 
 
 The tools listing has an "Embed needed" frame. These are the real dataviz integrations:
 
-- [ ] **Strategy Map** (Strategy CITEMap): the visual of the CITAble bands. The `@fw-vision/widgets` package already implements `StrategyMap`. Wire it into `/tools` and into analysis posts via the `datavizEmbed` / `embedComponent` fields.
-- [ ] **CITAble Business Index Explorer**: index radar + Resonance Wheel for CVI / Agentic Gradient / SRI. Build on the index-visualisation components.
+- [x] **Strategy CITEMap / Strategy Map**: retired on-site; superseded by CITAble Business research.
+- [ ] **CITAble Business Explorer**: index radar + Resonance Wheel for CVI / Agentic Gradient / SRI. Build on the index-visualisation components.
 - [ ] **APPETITE model explorer** for scenarios.
 
 Note: fw-vision-astro is Astro 6; `@fw-vision/widgets` is React 18||19 with an Astro-agnostic build. Embedding the React widgets needs `@astrojs/react` added here (mind the rolldown/react-refresh dev-server issue documented for syncidlabs) OR rendering the widgets as islands. Decide the integration path before wiring.
@@ -68,9 +81,9 @@ Note: fw-vision-astro is Astro 6; `@fw-vision/widgets` is React 18||19 with an A
 ## 6. Functional gaps
 
 - [ ] **Detail routes** (see Structural gaps) so scenarios/tools/podcast entries are linkable.
-- [ ] **Subscribe / newsletter** backend for "Subscribe to Signals" (primary CTA).
+- [x] **Subscribe / newsletter** — `/subscribe` posts to Listmonk public API (`docs/integrations/listmonk.md`). Confirmation mail still needs Resend SMTP in Listmonk Admin.
 - [ ] **Deploy**: GitHub Pages workflow + `public/CNAME` (fw.vision) added this pass. Needs: push, Pages enablement (source: GitHub Actions), DNS for the apex domain.
-- [ ] **Contact**: currently a mailto (`francis.wang@fw.vision`); confirm that is the intended path.
+- [x] **Contact**: mailto (`francis.wang@fw.vision`); location Toronto / GTA.
 
 ---
 
@@ -94,5 +107,5 @@ The foresight model is now live:
 
 ### Remaining for storylines
 - [ ] Develop the 6 coming-soon storylines to showcase depth (scenarios, off-ramps, graph nodes) as research matures.
-- [ ] **Navigation gap:** the site nav (home/subscribe/contact/about) does not link the content collections (lexicon, scenarios, tools, storylines, insights). This is a real contributor to the "empty" feel. Expand the primary nav to surface these sections.
+- [x] **Navigation gap:** sub-bar now links Insights, Signals, Lexicon, Storylines (in addition to MegaMenu).
 - [ ] Wire scenario/driver/signal detail rendering from the graph once volume grows (or migrate to Postgres).

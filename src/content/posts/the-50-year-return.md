@@ -1,11 +1,13 @@
 ---
 pubDate: 2026-07-03
 author: "francis-wang"
+editorialStatus: "published"
+contentType: "analysis"
 title: "The 50-Year Return: Against Quarterly Thinking"
 description: "Strategic funds operating on quarterly cycles structurally cannot invest in futures that take decades to actualise. The 50-year return horizon is not idealism; it is a structural requirement for civilisational infrastructure."
 image:
-  url: "../../images/blog/topical/fifty-year-horizon.jpg"
-  alt: "Long-horizon institutional thinking"
+  url: "../../images/blog/covers/the-50-year-return.jpg"
+  alt: "Editorial photograph of a pier extending into mist"
 tags:
   - foresight
   - institutional-design

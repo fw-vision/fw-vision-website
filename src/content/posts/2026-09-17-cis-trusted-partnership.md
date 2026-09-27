@@ -2,8 +2,8 @@
 title: "Harper places trusted partnership at the centre of investment"
 description: "Stephen Harper described trusted partnership as Canada's greatest resource and urged further partnership building after the summit."
 image:
-  url: "../../images/blog/covers/cis-trusted-partnership.png"
-  alt: "Flat illustration of interlocking frames"
+  url: "../../images/blog/covers/cis-trusted-partnership.jpg"
+  alt: "Editorial photograph of interlocking architectural frames"
 author: "francis-wang"
 pubDate: 2026-09-17T10:20:00-04:00
 contentType: "signal"
@@ -54,3 +54,5 @@ Stephen Harper described trusted partnership as Canada's greatest resource and s
 
 - **CBC News**: ["'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"](https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891)
 - **Event date**: September 15, 2026. **Source updated**: September 15, 2026, 7:35 PM EDT. **Accessed**: September 17, 2026.
+
+> Related public initiative: [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory and missions. This site publishes the foresight layer.

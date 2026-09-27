@@ -1,102 +1,72 @@
 # FW.VISION — Image Generation Brief
 
-> Prompts for AI image generation (or SVG illustration) to produce post covers across the site.
-> Covers must read as intentional brand art — never photoreal stock or photoreal AI photos.
+> Prompts for AI image generation to produce post covers across the site.
+> Covers must read as intentional brand art for a printed design journal — not stock collage, not neon AI defaults, and not thin-vector diagrams on black.
 
-## Cover style (locked)
+## Cover style (locked — revised 2026-09-27)
 
-**Style:** Futuristic flat editorial illustration. Vector-like shapes, limited depth, hard edges or soft geometric planes — not soft photoreal lighting.
+**Direction:** Editorial photography as punctuation (Constellation / Eindhoven Design District reference). Atmospheric stills of infrastructure, architecture, paper, and horizon — cropped tightly, used like a design journal uses a single photograph on a spread.
 
-**Mood:** Institutional foresight — restrained, precise, architectural. Diagrams, horizons, infrastructure glyphs, orbital/grid motifs, abstract Canada/governance symbols — still **non-literal**.
+**Why the previous system was retired:** Dark slate canvases with thin burgundy vector glyphs (grids, bars, topography lines) read as generic “AI foresight diagrams.” They fail the brand test: remove the wordmark and the cards could belong to any tech newsletter.
 
-**Palette:**
-- Burgundy accent (approx `#7A1F2B` / OKLCH hue 27.20)
-- Cool slate neutrals (`#1a1a2e`, `#2a2a3a`, `#94a3b8`)
-- Optional one cool secondary for depth (muted steel blue) — never purple-glow AI defaults
+**Mood:** Institutional foresight on white paper. Quiet, precise, material. Photography carries atmosphere; typography on the page carries the argument.
 
-**Composition:** One clear focal motif; ample negative space; legible at thumbnail (`BlogCard1` ~1/3 width) and hero (`BlogCard4`).
+**Palette grade:**
+- Prefer light paper, mist, concrete, steel, and cool daylight
+- Burgundy (`#7A1F2B` / OKLCH hue 27.20) only as a scarce accent in the frame (a mark, edge, filament) — never a full neon field
+- Avoid near-black full-bleed backgrounds except for rare night/industrial shots
+
+**Composition:** One clear subject; ample negative space; legible at thumbnail (~200×150) and hero (`BlogCard7` aspect-16/11).
 
 ### Hard bans
 
-- Photoreal people, hands, faces
-- Offices, handshakes, skylines-as-photos
-- Stock charts, glossy 3D CGI, neon cyberpunk glow
-- Illegible micro-text, logos, or wordmarks inside the art
+- Thin-line “data viz” diagrams on solid dark navy/black
+- Photoreal people, faces, handshakes, office stock
+- Neon cyberpunk glow, purple gradients, glossy 3D CGI
+- Illegible micro-text, logos, or wordmarks inside the art (exception: default OG card)
 
 ### Master prompt (paste before every subject)
 
 ```
-Flat futuristic editorial illustration for FW.VISION strategic foresight. Vector-like shapes, limited color palette of burgundy red and cool slate neutrals, clean geometric planes, restrained institutional mood, no photorealism, no people, no stock photo aesthetics, no text, no logos. Works as a magazine cover thumbnail.
+Editorial photograph for FW.VISION strategic foresight, printed design journal aesthetic. Atmospheric institutional still life or architecture/infrastructure detail. Soft daylight or paper-white negative space, restrained burgundy accent only if needed, no people, no stock handshake photos, no neon cyberpunk, no thin-line diagrams on black, no text, no logos. Quiet, precise, material. Works as a magazine cover thumbnail on a white webpage.
 ```
 
 ### Aspect ratios & output
 
 | Use | Ratio | Size | Format | Path |
 |-----|-------|------|--------|------|
-| Blog / signal cards | 12:8 (≈3:2) | 1600×1200 | WebP/PNG | `src/images/blog/covers/` |
-| Hero cards | 16:9 | 1600×900 | WebP/PNG | `src/images/blog/covers/` |
-| OG / social | 1.91:1 | 1200×630 | PNG | `public/og-image.jpg` |
+| Blog / signal cards | 12:8 (≈3:2) | 1600×1200 | WebP/PNG/JPEG | `src/images/blog/covers/` |
+| Hero (`BlogCard7`) | 16:11 | 1600×1100 | WebP/JPEG | `src/images/blog/covers/` |
+| OG / social | 1.91:1 | 1200×630 | JPG | `public/og-image.jpg` |
 | Author avatar | 1:1 | 800×800 | JPEG | `src/images/authors/` |
 
 ---
 
-## Required images
+## Subject motifs (photography, not glyphs)
 
-### 1. Default OG / Social Card (1200×630)
-
-**Purpose:** Default social sharing image when no post-specific image exists.
-
-**Prompt direction:** Dark slate background (#1a1a2e). FW.VISION wordmark in League Spartan Bold centred. Subtle burgundy accent line beneath. Clean, typographic, institutional. (Exception: wordmark allowed only on OG default.)
-
----
-
-### 2–6. Analysis covers (existing subjects)
-
-Use master prompt + subject:
-
-| Post | Motif |
-|------|--------|
-| The Founder-Led Thesis | Small burgundy node connected to a constellation of smaller nodes — core orchestrating a network |
-| Sovereign Innovation: Canada's Position | Abstract topographic lines + circuit overlay; burgundy energy line; cartographic without being literal |
-| The 50-Year Return | Single precise timeline; dense marks near, sparse far; burgundy on far-horizon marker |
-| Knowledge as the Next IP | Knowledge graph; burgundy nodes = curated knowledge, dim nodes = raw data |
-| About / CITE bands (optional) | Four horizontal bands in burgundy-to-slate gradients — layered governance |
+| Post / signal | Photographic motif |
+|---------------|-------------------|
+| Patient capital / featured | Long concrete corridor or horizon road receding; patient distance |
+| Founder-led thesis | Single architectural node / atrium intersection suggesting orchestration |
+| Sovereign innovation | Power infrastructure or computing hall detail, Canadian-cold light, non-literal |
+| 50-year return | Weathered timeline material: stacked archival boxes, or a long pier into mist |
+| Knowledge as IP | Open folio / annotated papers / library stacks as texture (no readable text) |
+| Four conditions | Four structural bays / columns in a building facade |
+| Thinking and actualizing | Split still: blank paper / drafting table vs finished built detail |
+| CIS signals | Infrastructure details matching each signal (runway lines as real tarmac, energy transmission, approval stamp texture, etc.) |
 
 ---
 
-### 7. Commentary: Patient Capital (`cis-patient-capital`)
+## Default OG / Social Card (1200×630)
 
-**Motif:** Long horizontal capital flow as layered geometric bands stretching into a distant horizon marker (burgundy). Suggests patient time, not money stacks.
-
----
-
-### 8–17. CIS Signals
-
-| Signal | Motif |
-|--------|--------|
-| Summit direction | Compass / radial rays from a single burgundy origin on slate field |
-| Meeting transparency | Open geometric lattice / overlapping transparent planes |
-| Trusted partnership | Two interlocking geometric frames sharing a burgundy hinge |
-| US reliance | Twin vertical columns with asymmetric burgundy bridge between them |
-| Comparative advantage | Layered resource strata (abstract bands) with one highlighted vein |
-| Energy superpower | Abstract energy arc / horizon power line in burgundy on slate |
-| Defence industrial strategy | Shield-like geometric plane + industrial grid overlay (non-military literal) |
-| Airport governance | Abstract runway / converging perspective lines into a governance node |
-| Project approvals | Stacked approval gates as flat rectangles with one burgundy unlocked gate |
-| RBC investor interest | Rising geometric steps / capital staircase toward a burgundy apex |
-
----
-
-### Author avatar placeholder
-
-Prefer a real photograph. If generating: professional headshot style — **not** the flat cover system.
+Dark slate or paper ground. FW.VISION wordmark centred (League Spartan). Thin burgundy accent line beneath. Typographic only — exception to the no-wordmark rule.
 
 ---
 
 ## Generation notes
 
-- All covers work without text overlay (titles are rendered by the site)
-- Test at ~200×150 thumbnail — motif must remain legible at card scale
-- Prefer images that read on white page backgrounds (homepage cards)
-- No stock photo aesthetics
-- Prefer `src/images/blog/covers/{slug}.png` naming aligned to post id
+- Prefer real photographic texture over flat illustration
+- Test at ~200×150 — motif must remain readable
+- Prefer images that sit on white page backgrounds (homepage cards)
+- Naming: `src/images/blog/covers/{slug}.jpg` preferred for photo covers; keep `.png` only if the asset is already PNG
+- Archive retired flat-vector covers under `src/images/_quarantine/covers-flat-vector/` when replaced

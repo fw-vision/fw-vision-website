@@ -5,7 +5,7 @@ pubDate: 2026-05-18
 originatedDate: 2025-09-01
 author: "francis-wang"
 tags: ["foresight", "frameworks", "scenario-analysis"]
-relatedFrameworks: ["Foresight Scope", "Strategy CITEMap"]
+relatedFrameworks: ["Foresight Scope", "CITAble Business Index"]
 ---
 
 ## Definition

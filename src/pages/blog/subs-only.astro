@@ -4,14 +4,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 // Components
-import Subscribe from "@/components/cta/Subscribe.astro";
 import BlogCard2 from "@/components/blog/BlogCard2.astro";
-// Content
-const allPosts = await getCollection("posts");
-import { getCollection } from "astro:content";
-// Sections
 import BlogAside from "@/components/blog/BlogAside.astro";
 import AdvertAside from "@/components/advert/AdvertAside.astro";
+// Content
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
 // Sort posts by date
 allPosts.sort((a, b) => {
   const dateA = new Date(a.data.pubDate).getTime();
@@ -41,7 +39,17 @@ allPosts.sort((a, b) => {
                 .map((post) => <BlogCard2 post={post} />)
             }
           </div>
-          <Subscribe />
+          <div class="mt-12 rounded-xl bg-base-100 p-6">
+            <Text tag="h3" variant="textSM" class="text-base-900 font-medium">
+              Subscribe to Signals
+            </Text>
+            <Text tag="p" variant="textXS" class="text-base-600 mt-2">
+              Locked posts will open as Signals membership access ships. Until then,
+              <a href="/subscribe" class="text-accent-700 hover:underline">subscribe to Signals</a>
+              or follow the
+              <a href="/rss.xml" class="text-accent-700 hover:underline">RSS feed</a>.
+            </Text>
+          </div>
         </div>
         <div
           class="lg:pl-8 lg:relative lg:before:absolute lg:after:absolute

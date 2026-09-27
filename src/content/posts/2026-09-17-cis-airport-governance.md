@@ -2,8 +2,8 @@
 title: "Airport capital proposal brings governance models into view"
 description: "Ottawa will seek private investment in four major airports while studying international models and consulting workers and communities."
 image:
-  url: "../../images/blog/covers/cis-airport-governance.png"
-  alt: "Flat illustration of converging runway lines"
+  url: "../../images/blog/covers/cis-airport-governance.jpg"
+  alt: "Editorial photograph of runway seams on concrete"
 author: "francis-wang"
 pubDate: 2026-09-17T10:05:00-04:00
 contentType: "signal"
@@ -54,3 +54,5 @@ CBC reported that Canada will seek private investment in its four largest airpor
 
 - **CBC News**: ["'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"](https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891)
 - **Event date**: September 15, 2026. **Source updated**: September 15, 2026, 7:35 PM EDT. **Accessed**: September 17, 2026.
+
+> Related public initiative: [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory and missions. This site publishes the foresight layer.

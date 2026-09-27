@@ -13,23 +13,17 @@ allPosts.sort(
 const allTags = allPosts.flatMap((post) => post.data.tags);
 const categories = topCategoriesFrom(allTags);
 
-// Storylines for the third column: showcase first, then a few others.
+// Mega menu surfaces showcase storylines only (coming-soon stay on /storylines).
 const allStorylines = await getCollection("storylines");
-const statusRank = { showcase: 0, active: 1, "coming-soon": 2 };
-allStorylines.sort(
-  (a, b) => (statusRank[a.data.status] ?? 3) - (statusRank[b.data.status] ?? 3)
-);
-const menuStorylines = allStorylines.slice(0, 4);
+const menuStorylines = allStorylines.filter((s) => s.data.status === "showcase");
 
 const sections = [
   {
     title: "FW.VISION",
     links: [
       { name: "About", url: "/about" },
-      { name: "Signals", url: "/signals" },
-      { name: "Commentary", url: "/commentary" },
       { name: "Insights", url: "/blog" },
-      { name: "Podcast", url: "/podcast" },
+      { name: "Signals", url: "/signals" },
       { name: "Contributors", url: "/authors" },
       { name: "Engage", url: "/contact" },
     ],
@@ -39,8 +33,6 @@ const sections = [
     links: [
       { name: "Trajectory Storylines", url: "/storylines" },
       { name: "Lexicon", url: "/lexicon" },
-      { name: "Frameworks", url: "/lexicon" },
-      { name: "Scenarios", url: "/scenarios" },
       { name: "Tools", url: "/tools" },
     ],
   },

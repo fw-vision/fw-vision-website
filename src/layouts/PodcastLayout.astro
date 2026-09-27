@@ -44,7 +44,7 @@ const relatedPosts = allPosts.filter((post) =>
                   title={tag}
                   aria-label={tag}
                   href={`/blog/tags/${tag}`}
-                  class="text-blue-500 uppercase font-medium"
+                  class="text-accent-600 uppercase font-medium"
                 >
                   {tag}
                 </Text>
@@ -193,25 +193,17 @@ const relatedPosts = allPosts.filter((post) =>
                             variant="textXL"
                             class="text-base-900 font-medium text-balance"
                           >
-                            This episode is for subscribers only. Unlock premium
-                            insights by becoming a member.
+                            This episode is for subscribers only. Subscribe to Signals
+                            to receive access announcements.
                           </Text>
                           <div class="flex justify-center mt-8 flex-wrap gap-2">
                             <Button
                               isLink
                               size="sm"
-                              variant="muted"
-                              href="/pricing/membership"
-                            >
-                              Log in
-                            </Button>
-                            <Button
-                              isLink
-                              size="sm"
                               variant="default"
-                              href="/pricing/membership"
+                              href="/subscribe"
                             >
-                              Subscribe Now
+                              Subscribe
                             </Button>
                           </div>
                         </div>

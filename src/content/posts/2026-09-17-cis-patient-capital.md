@@ -2,8 +2,8 @@
 title: "Capital is an input. Sovereignty is retained capability."
 description: "Canada's investment agenda will be measured by where decision rights, intellectual property, operating capacity, talent, and long-term returns remain."
 image:
-  url: "../../images/blog/covers/cis-patient-capital.png"
-  alt: "Flat illustration of layered capital horizons"
+  url: "../../images/blog/covers/cis-patient-capital.jpg"
+  alt: "Editorial photograph of a long institutional corridor into mist"
 author: "francis-wang"
 pubDate: 2026-09-17T18:00:00-04:00
 contentType: "column"
@@ -130,3 +130,5 @@ Canada has an opportunity to define investment success with greater precision. T
 ## Disclosure
 
 FW.VISION researches and advises on sovereign innovation. It is developing public initiatives in sovereign compute and Canadian economic sovereignty. These initiatives are independent of the Canada Investment Summit, and this column makes no claim that they are connected to summit decisions.
+
+> Related public initiative: [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory and missions. This site publishes the foresight layer.

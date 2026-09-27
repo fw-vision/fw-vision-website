@@ -3,9 +3,9 @@ export const PRIMARY_CATEGORIES = [
   "sovereignty",
   "investment",
   "governance",
-  "innovation",
   "foresight",
   "technology",
+  "innovation",
 ] as const;
 
 export type PrimaryCategory = (typeof PRIMARY_CATEGORIES)[number];

@@ -25,4 +25,4 @@ Navigation logic converts the compelling questions that surface off-ramps into a
 
 ## Why It Matters
 
-Foresight without navigation logic is vision without a route. Navigation logic is what makes a preferred trajectory a plan rather than a hope, and it is the layer FW.VISION hands to the operational partners (SyncID Labs and the ventures it hosts) who actualize the futures. It is Active Futuring made concrete: the specific present actions that move toward the chosen future rather than waiting for it.
+Foresight without navigation logic is vision without a route. Navigation logic is what makes a preferred trajectory a plan rather than a hope, and it is the layer FW.VISION hands to the operational partners ([Synchronous I&D Labs Inc.](https://syncidlabs.com/en/) / SyncIDLabs and the ventures it hosts) who actualize the futures. It is Active Futuring made concrete: the specific present actions that move toward the chosen future rather than waiting for it.

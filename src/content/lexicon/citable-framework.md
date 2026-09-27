@@ -5,16 +5,18 @@ pubDate: 2026-06-25
 originatedDate: 2026-01-15
 author: "francis-wang"
 tags: ["organisational-design", "frameworks", "governance"]
-relatedFrameworks: ["Strategy CITEMap", "Founder-Led Organisation", "Hybrid Intelligence"]
+relatedFrameworks: ["CITAble Business Index", "Founder-Led Organisation", "Hybrid Intelligence"]
 ---
 
 ## Definition
 
 CITAble is a seven-band operational framework that structures organisational knowledge into navigable, interoperable layers. The name operates on two registers: CITE (the verb, meaning to operationalise strategy with structural clarity) and citable (the adjective, describing an organisation whose operations are transparent enough that external actors can reference, learn from, and build upon them).
 
+Assessment of ventures against futures worth actualizing is carried by the [CITAble Business Index](/lexicon/citable-business-index) and the broader CITAble Business research programme — not by a separate Strategy CITEMap product.
+
 ## The CITE Bands
 
-Four bands structure external-facing strategy (visualised on the Strategy CITEMap):
+Four bands structure external-facing strategy:
 
 | Band | Question | Contains | Cadence |
 |------|----------|----------|---------|

@@ -1,17 +1,18 @@
 ---
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-// Entries
-import BlogCard4 from "@/components/blog/BlogCard4.astro";
+// Entries — Phanatik featured pattern: split copy + image (BlogCard7)
+import BlogCard7 from "@/components/blog/BlogCard7.astro";
 
 // Get all posts
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("posts");
-allPosts.sort((a, b) => {
-  const dateA = new Date(a.data.pubDate).getTime();
-  const dateB = new Date(b.data.pubDate).getTime();
-  return dateB - dateA;
-});
+const allPosts = (await getCollection("posts"))
+  .filter((post) => post.data.editorialStatus === "published")
+  .sort((a, b) => {
+    const dateA = new Date(a.data.pubDate).getTime();
+    const dateB = new Date(b.data.pubDate).getTime();
+    return dateB - dateA;
+  });
 ---
 
 <div>
@@ -26,7 +27,7 @@ allPosts.sort((a, b) => {
         allPosts
           .filter((post) => post.data.isFeatured)
           .slice(0, 1)
-          .map((post) => <BlogCard4 post={post} />)
+          .map((post) => <BlogCard7 post={post} />)
       }
     </div>
   </div>

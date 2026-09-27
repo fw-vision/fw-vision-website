@@ -2,8 +2,8 @@
 title: "Defence strategy frames domestic procurement and maintenance"
 description: "The summit presented Canada's defence industrial strategy to sovereign wealth managers alongside a stated four per cent GDP defence-spending path by 2030."
 image:
-  url: "../../images/blog/covers/cis-defence-industrial-strategy.png"
-  alt: "Flat illustration of a geometric shield and grid"
+  url: "../../images/blog/covers/cis-defence-industrial-strategy.jpg"
+  alt: "Editorial photograph of industrial workshop geometry"
 author: "francis-wang"
 pubDate: 2026-09-17T10:15:00-04:00
 contentType: "signal"
@@ -54,3 +54,5 @@ Defence Minister David McGuinty said the summit presented Canada's defence indus
 
 - **CBC News**: ["'Mega' tax writeoffs, private money for airports: How Carney's investment summit unfolded"](https://www.cbc.ca/news/canada/livestory/carney-investment-summit-tariffs-trillion-protests-9.7344307?id=9.7344307.15891)
 - **Event date**: September 15, 2026. **Source updated**: September 15, 2026, 7:35 PM EDT. **Accessed**: September 17, 2026.
+
+> Related public initiative: [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory and missions. This site publishes the foresight layer.

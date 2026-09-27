@@ -4,8 +4,9 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
 
-const allLexicon = await getCollection("lexicon");
-allLexicon.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const allLexicon = (await getCollection("lexicon"))
+  .filter((entry) => !entry.data.tags?.includes("retired"))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <BaseLayout>

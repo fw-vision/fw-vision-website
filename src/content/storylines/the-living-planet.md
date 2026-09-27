@@ -16,4 +16,4 @@ tags: ["climate", "terraforming", "regeneration"]
 
 This trajectory storyline is under active research. A regenerated, resilient planet, extending from climate tech to planetary terraforming and terrascaping.
 
-The preferred trajectory, its scenario sequence, off-ramps, and Foresight Scope are in development. The first fully-developed storyline is [Sovereign Canada 2075](/storylines/sovereign-canada).
+The preferred trajectory, its scenario sequence, off-ramps, and Foresight Scope are in development. The first fully-developed foresight storyline is [Sovereign Canada](/storylines/sovereign-canada). Public Canadian advocacy for the preferred 2080 path lives at [Canada2080](https://canada2080.org/).

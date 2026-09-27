@@ -4,15 +4,30 @@
 
 ## Quick Start
 
+Requires Bun. Private `@fw-vision/*` packages need `GITHUB_TOKEN_FWVISION` in the environment (see `.npmrc`).
+
 ```bash
-npm install
-npm run dev       # Start dev server at localhost:4321
-npm run build     # Build for production
-npm run preview   # Preview production build
+bun install
+bun run check
+bun run build
 ```
+
+## Tailnet development
+
+```bash
+bun run dev
+```
+
+The `dev` script binds Astro to `0.0.0.0`. Trusted Tailnet devices can open:
+
+- `http://100.71.170.90:4321`
+- `http://fcwang-elitemini-series.tail0f7891.ts.net:4321`
+
+Binding to `0.0.0.0` listens on every host interface. Keep firewall and ingress controls in place and do not enable public Funnel access for development. Persistent development servers are user-managed runtime processes, not automated verification commands.
 
 ## Tech Stack
 
+- **Runtime**: Bun (`bun run dev`, `bun run build`)
 - **Framework**: Astro 6.3 (static-first, islands architecture)
 - **Styling**: Tailwind CSS 4 (with typography, forms plugins)
 - **Content**: MDX-powered content collections

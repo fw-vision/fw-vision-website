@@ -1,10 +1,11 @@
 ---
-title: "Canada 2075: The Sovereign Innovation Century"
+title: "Sovereign Canada: A Capability Century"
 pubDate: 2026-07-18
+updatedDate: 2026-09-27
 author: "Francis Wang"
-description: "A backcasting scenario in which Canada closes its innovation gap by building sovereign capacity in compute, energy, and food, and keeps the value of its research and talent at home."
-tags: ["sovereignty", "canada", "backcasting"]
-timeHorizon: "2075"
+description: "A backcasting scenario in which Canada compounds energy, compute, production, and control rights into durable domestic capability. Public advocacy for the preferred 2080 path lives at Canada2080."
+tags: ["sovereignty", "canada", "backcasting", "canada2080"]
+timeHorizon: "2080"
 scenarioType: "backcasting"
 geographicFocus: "Canada"
 isFeatured: true
@@ -12,17 +13,18 @@ isFeatured: true
 
 ## The Trajectory
 
-By 2075, Canada is no longer a country that trains world-class talent and exports it. It has built sovereign capacity in the industries that make a nation independent: compute it owns and controls, energy it generates and stores, food it produces at scale. The innovation districts seeded in the 2020s matured into dense centres of gravity that kept founders, IP, and value at home.
+In the preferred late-century outcome, Canada is no longer a country that trains strong talent and exports the value of that training. It has compounded **selective strategic capability**: compute it can access and govern, energy that underwrites industry, production and repair depth, and control rights that keep learning and reinvestment at home.
 
-This scenario is a backcast: it starts from a future worth actualizing and works backward to the present decisions that make it reachable.
+This scenario is a backcast: it starts from a future worth actualizing and works backward to the present decisions that make it reachable. It is a foresight artifact for research and advisory — not the public national initiative. That initiative is **[Canada2080](https://canada2080.org/)**.
 
 ## What Had to Be True
 
-- **Sovereign compute** moved from concept to distributed, dual-use infrastructure.
-- **Innovation districts** replaced innovation theatre: founder pipelines first, buildings second.
-- **Foresight became institutional**, not a periodic report. Ventures were assessed for future-proofing and steered accordingly.
-- **The value stayed home**: the 1.2 million-entry annual talent drain to the US reversed as domestic ventures became worth staying for.
+- **Energy and compute substrates** moved from concept to reliable, governable infrastructure for strategic workloads.
+- **Production depth** replaced innovation theatre: pilots converted to operating systems, suppliers, and repair capacity.
+- **Opportunity structure for talent** made ambitious domestic roles available — so people stay, return, or circulate by choice.
+- **Control rights and reinvestment** kept decision rights, IP, and capital recycling inside Canadian institutions.
+- **Foresight became institutional**, not a periodic report. Ventures and missions were assessed against preferred trajectories and off-ramps.
 
 ## The Present Decisions
 
-The scenario is not a prediction. It is a target that present action moves toward or away from. Active futuring is the practice that separates a Canada that reaches 2075 sovereign from one that watches the opportunity leave. This is the trajectory FW.VISION explores and the kind of future SyncID Labs is built to actualize.
+The scenario is not a prediction. It is a target that present action moves toward or away from. FW.VISION contributes **signals research**, **scenario planning**, and **strategic advisory**. Canada2080 convenes the movement, missions, and public accountability for the preferred 2080 path. Related foresight storyline: [Sovereign Canada](/storylines/sovereign-canada).

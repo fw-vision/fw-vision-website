@@ -16,4 +16,4 @@ tags: ["health", "longevity", "immortality"]
 
 This trajectory storyline is under active research. Precision and preventative health advancing toward biological immortality, and what a 200-year lifespan would mean for how we steward the planet.
 
-The preferred trajectory, its scenario sequence, off-ramps, and Foresight Scope are in development. The first fully-developed storyline is [Sovereign Canada 2075](/storylines/sovereign-canada).
+The preferred trajectory, its scenario sequence, off-ramps, and Foresight Scope are in development. The first fully-developed foresight storyline is [Sovereign Canada](/storylines/sovereign-canada). Public Canadian advocacy for the preferred 2080 path lives at [Canada2080](https://canada2080.org/).

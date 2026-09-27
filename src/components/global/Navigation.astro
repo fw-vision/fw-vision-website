@@ -59,20 +59,24 @@ import NavLatestNews from "@/components/global/NavLatestNews.astro";
           </Button>
         </div>
       </div>
-      <div class="grid w-full grid-cols-3 gap-4 lg:gap-12 mt-2">
-        <a
-          href="/about"
-          class="text-xs text-base-600 hover:text-accent-500 shrink-0"
-        >
-          About FW.VISION
-        </a>
+      <div class="flex flex-col gap-2 mt-2">
+        <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <a
+            href="/about"
+            class="text-xs text-base-600 hover:text-accent-500 shrink-0"
+          >
+            About FW.VISION
+          </a>
+          <div
+            class="hidden lg:flex items-center gap-3 text-xs text-base-600"
+          >
+            <a href="/blog" class="hover:text-accent-500">Insights</a>
+            <a href="/signals" class="hover:text-accent-500">Signals</a>
+            <a href="/lexicon" class="hover:text-accent-500">Lexicon</a>
+            <a href="/storylines" class="hover:text-accent-500">Storylines</a>
+          </div>
+        </div>
         <NavLatestNews />
-        <a
-          href="/subscribe"
-          class="text-xs text-base-600 hover:text-accent-500 lg:col-span-auto col-start-3 ml-auto"
-        >
-          Subscribe
-        </a>
       </div>
       <MegaMenu />
       <!-- Ticker element to be conditionally hidden -->

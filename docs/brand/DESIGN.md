@@ -129,11 +129,12 @@ Homepage and editorial rails use flags + `contentType` together:
 
 ### Imagery
 
-- **Cover style:** Futuristic flat editorial illustration — not photoreal stock or photoreal AI. See [`docs/image-generation-brief.md`](../image-generation-brief.md) for master prompt, palette, and bans.
-- Covers live under `src/images/blog/covers/` (CIS + commentary); legacy topical photos may remain on older analyses.
+- **Cover style:** Editorial photography as punctuation (printed design journal / Eindhoven reference) — atmospheric infrastructure, architecture, and paper stills on light grounds. See [`docs/image-generation-brief.md`](../image-generation-brief.md).
+- **Retired:** Dark slate canvases with thin burgundy vector glyphs (quarantined under `src/images/_quarantine/covers-flat-vector/`).
+- Covers live under `src/images/blog/covers/`; storyline topical photos may remain under `blog/topical/`.
 - Use Astro's `<Image>` component for optimization
 - Default loading: `loading="lazy"` / `decoding="async"` (eager on above-the-fold cards)
-- Blog / signal cards: `aspect-12/8`; hero: `aspect-16/9`
+- Blog / signal cards: `aspect-12/8`; featured hero (`BlogCard7`): `aspect-16/11`
 - Author avatars: `aspect-square rounded-full` (prefer real photography)
 
 ---

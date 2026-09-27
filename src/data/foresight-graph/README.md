@@ -7,7 +7,7 @@ Canonical source of truth for the model: `04_Execute/FW.VISION/context/trajector
 ## Files
 
 - `types.ts` - node and edge type definitions (Horizon, Likelihood/4 P's, DriverCategory/STEP, DatorTrajectory, edge types).
-- `graph.ts` - the graph data. Sovereign Canada 2075 is fully populated; other storylines are coming-soon nodes.
+- `graph.ts` - the graph data. Sovereign Canada is fully populated; other storylines are coming-soon nodes.
 - `derive.ts` - `foresightDataForStoryline(id)` builds `ForesightScopeData` (for the `@fw-vision/widgets` ForesightScope) from the graph.
 
 ## Node types

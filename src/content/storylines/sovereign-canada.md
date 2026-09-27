@@ -1,8 +1,9 @@
 ---
-title: "Sovereign Canada 2075"
+title: "Sovereign Canada"
 slogan: "Sovereign Canada"
-description: "The preferred trajectory toward an economically sovereign Canada that becomes a global economic leader by 2075, keeping the value of its research and talent at home."
+description: "FW.VISION's foresight storyline on Canadian economic sovereignty: scenarios, signals, and off-ramps toward durable domestic capability. Public advocacy and coalition work live at Canada2080."
 pubDate: 2026-07-24
+updatedDate: 2026-09-27
 author: "Francis Wang"
 domainSeries: ["Future of Work", "Future of Industry", "Future of Energy"]
 horizons: ["H2", "H3"]
@@ -10,44 +11,52 @@ status: "showcase"
 graphId: "sl-sovereign-canada"
 cover:
   url: "../../images/blog/topical/sovereign-canada.jpg"
-  alt: "Canada as a sovereign global economic leader"
-tags: ["sovereignty", "canada", "compute", "energy", "industry"]
+  alt: "Canadian infrastructure and horizon — foresight storyline cover"
+tags: ["sovereignty", "canada", "compute", "energy", "industry", "canada2080"]
 ---
 
-Canada trains world-class talent and then watches it cross the border. It generates research and lets the value settle abroad. This is the probable future: a slow, managed decline in economic independence, productivity sliding, IP captured elsewhere, the best people leaving.
+Canada trains strong talent and produces strong research, yet too often fails to convert that strength into Canadian-controlled production, learning, demand, and reinvestment. That conversion-and-control problem is the shared problem space.
 
-**Sovereign Canada 2075** is the preferred trajectory that departs from that line. It is an argument, told through a sequence of scenarios, about how Canada becomes an economically sovereign global leader within fifty years, and about the single constraint that most threatens to derail it.
+**Sovereign Canada** is FW.VISION's foresight storyline on that problem: a preferred trajectory told through scenarios, likelihoods, and off-ramps. It is not the public national initiative. The initiative that advocates, convenes, and accounts for Canada's preferred 2080 path is **[Canada2080](https://canada2080.org/)**.
+
+FW.VISION's contribution is the foresight layer: **signals research**, **scenario planning**, and **strategic advisory**. Canada2080 owns the movement, missions, and public accountability.
 
 ## The Preferred Trajectory
 
-The path runs through five scenarios, present to 2075:
+Within FW.VISION's range of concern, the preferred path compounds through linked capability:
 
-1. **Sovereign compute stood up (H1).** Distributed, nationally-owned compute capacity comes online, ending foreign dependency for strategic AI workloads.
-2. **A resilient sovereign grid (H1.5).** Storage and micro-grids underpin compute and industry. This is a globally replicable pattern, not a Canada-only fix.
-3. **Industry 4.0+ capacity rebuilt (H2).** Domestic advanced manufacturing and robotics rebuild industrial capacity and exports.
-4. **Talent drain reverses (H2).** Skilled workers stay, because domestic ventures become worth staying for. The 1.2 million annual professional-work entries to the US begin to reverse.
-5. **Global economic leader (H3).** Canada is sovereign in the industries that make a nation independent.
+1. **Secure energy and compute substrates (H1–H1.5).** Reliable low-carbon power and Canadian-accessible, governable compute reduce single-vendor and single-jurisdiction dependency for strategic workloads.
+2. **Production and repair depth (H2).** Advanced manufacturing, materials, suppliers, and repair capacity turn pilots into operating systems worth owning.
+3. **Opportunity structure for talent (H2).** Skilled people stay, return, or circulate when domestic ventures, institutions, and missions create ambitious roles — not when education volume alone rises.
+4. **Control rights and reinvestment (H2–H3).** Beneficial ownership, data and IP rights, standards positions, and returns that fund the next generation of capability determine whether activity is sovereignty or theatre.
+5. **Trusted contribution (H3).** Leadership is measured as selective strategic choice, public value, resilience, and contribution to planetary systems — not as unqualified national ranking.
 
-A substory runs alongside: **food independence (H2)**, as controlled-environment agriculture closes staple-crop import dependency. Like the grid, it is a pattern other nations can replicate, and it ladders up toward the planetary-scale trajectory of First Light.
+A living-systems substory (food, water, ecological infrastructure) and climate-ready regional capacity connect this storyline to **The Living Planet** and **First Light**. Detailed mission fields and the public 2030–2080 anchors are maintained on Canada2080's [Trajectory](https://canada2080.org/trajectory) and [Missions](https://canada2080.org/missions).
 
-## The Off-Ramp That Decides It
+## Off-Ramps
 
-A preferred trajectory is only honest if it names where it breaks. The decisive off-ramp for Sovereign Canada sits at scenario four:
+A preferred trajectory is honest only if it names where it breaks. Decisive junctions include:
 
-> **If talent retention fails**, the trajectory diverts. Skilled workers keep leaving, compute and IP stay foreign-controlled, and sovereignty becomes nominal. The path collapses first into **continued dependency (H2)** and then, without patient capital, into **industrial hollowing (H3)**.
+- **Talent and opportunity fail together** — capability grows on paper while people underemploy or leave; sovereignty becomes nominal.
+- **Energy or compute bottlenecks** — advanced industry and AI workloads remain externally gated.
+- **Capital without strategic terms** — activity rises while decision rights, learning, and reinvestment leave Canada.
+- **Metrics theatre / permanent launch mode** — announcements substitute for pilot-to-production conversion and public accountability.
 
-This is the contrast the storyline exists to show. Two futures share the same starting conditions; a single unaddressed constraint (whether talent stays) divides Canada's development into leadership or decline.
+FW.VISION tracks these as foresight off-ramps; Canada2080 maintains the fuller public failure-path register.
 
 ## Navigation Logic
 
-Steering around the off-ramp requires three moves, in sequence:
+FW.VISION's contribution is interpretive and advisory:
 
-- **Build ventures worth staying for** (the Constellation play): domestic firms and funds aligned to the futures worth actualizing, so the talent has somewhere to go.
-- **Own the compute and the grid**: sovereignty is real only when the strategic infrastructure is not foreign-controlled.
-- **Structure patient capital**: the fifty-year build does not fund on quarterly horizons.
+- attach **signals** to scenarios and update likelihoods;
+- keep Foresight Scope and APPETITE decompositions current;
+- hand navigation implications to operators, missions, and clients without claiming to run the national coalition.
 
-This navigation logic is the layer FW.VISION hands to SyncID Labs and the ventures it hosts. FW.VISION theorises the trajectory; the operational arm actualizes it.
+Public participation, mission ownership, and accountability updates belong at Canada2080 ([Join](https://canada2080.org/join), [Signals](https://canada2080.org/signals)). Ventures and funds that actualize aligned futures remain part of the constellation case mix; they are not substitutes for the Canada2080 movement.
 
 ## How to Read the Scope
 
-The Foresight Scope below renders this storyline: scenarios sit on horizon rings by likelihood (Probable, Plausible, Possible, Preposterous), the **preferred trajectory** is drawn as the bold line threading the present to 2075, and the **off-ramp** diverges as a contrasting line toward dependency and hollowing. This is one storyline of several within FW.VISION's range of concern; the others are in development.
+The Foresight Scope below renders this storyline: scenarios sit on horizon rings by likelihood (Probable, Plausible, Possible, Preposterous), the **preferred trajectory** is drawn as the bold line threading the present toward late-century capability, and **off-ramps** diverge as contrasting paths toward dependency and hollowing. This is one storyline of several within FW.VISION's range of concern; the others are in development.
+
+> **Public initiative:** [Canada2080.org](https://canada2080.org/) — preferred 2080 trajectory, Gaps, missions, events, and Signals.  
+> **This page:** FW.VISION foresight storyline for research, scenario planning, and strategic advisory.

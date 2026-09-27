@@ -8,34 +8,32 @@ const allTags = allPosts.flatMap((post) => post.data.tags);
 const categories = topCategoriesFrom(allTags);
 ---
 
-<div class="items-center hidden lg:flex gap-4 w-full min-w-0">
-  <div class="flex gap-2 justify-start items-center w-full min-w-0 overflow-hidden">
-    <Text
-      tag="p"
-      variant="textXS"
-      class="shrink-0 lg:border-r-2 lg:pr-2 lg:border-base-200 text-base-900 uppercase font-medium"
-    >
-      Categories
-    </Text>
-    {
-      categories.map((tag) => (
-        <Text
-          tag="a"
-          variant="textXS"
-          href={`/blog/tags/${tag}`}
-          class="capitalize shrink-0 font-normal inline-block text-base-600 hover:text-base-900"
-        >
-          {formatCategoryLabel(tag)}
-        </Text>
-      ))
-    }
-    <Text
-      tag="a"
-      variant="textXS"
-      href="/blog/tags"
-      class="shrink-0 font-medium inline-block text-accent-600 hover:underline"
-    >
-      View all
-    </Text>
-  </div>
+<div class="hidden lg:flex items-center gap-2 w-full flex-wrap">
+  <Text
+    tag="p"
+    variant="textXS"
+    class="shrink-0 lg:border-r-2 lg:pr-2 lg:border-base-200 text-base-900 uppercase font-medium"
+  >
+    Categories
+  </Text>
+  {
+    categories.map((tag) => (
+      <Text
+        tag="a"
+        variant="textXS"
+        href={`/blog/tags/${tag}`}
+        class="capitalize shrink-0 font-normal inline-block text-base-600 hover:text-base-900"
+      >
+        {formatCategoryLabel(tag)}
+      </Text>
+    ))
+  }
+  <Text
+    tag="a"
+    variant="textXS"
+    href="/blog/tags"
+    class="shrink-0 font-medium inline-block text-accent-600 hover:underline"
+  >
+    View all
+  </Text>
 </div>

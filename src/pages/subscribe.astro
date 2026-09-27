@@ -4,13 +4,17 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
+const listmonkUrl = (import.meta.env.PUBLIC_LISTMONK_URL ?? "https://fwvision-elitemini-series.tail0f7891.ts.net").replace(/\/$/, "");
+const listmonkListUuid = import.meta.env.PUBLIC_LISTMONK_LIST_UUID ?? "2e695404-3067-4d75-9e09-e618b0b2b39c";
+const subscribeEnabled = Boolean(listmonkUrl && listmonkListUuid);
+
 const engagementTiers = [
   {
     title: "Signals",
     description: "Cross-domain futures analysis, framework previews, and signal alerts delivered to your inbox.",
     price: "Complimentary",
     buttonVariant: "muted",
-    buttonText: "Newsletter status",
+    buttonText: "Subscribe",
     href: "#newsletter",
   },
   {
@@ -85,14 +89,14 @@ const faqData = [
               variant="textSM"
               class="text-base-900 uppercase font-medium"
             >
-              Engage with FW.VISION
+              Signals &amp; Engagement
             </Text>
             <Text
               tag="p"
               variant="textSM"
               class="text-base-600 relative before:absolute after:absolute before:bg-base-950 after:bg-base-950/10 before:top-0 before:left-0 before:h-px before:w-6 after:top-0 after:right-0 after:left-8 after:h-px pt-4 mt-2"
             >
-              Consulting workshops, governance advisory, and institutional foresight infrastructure. All published research is freely accessible.
+              Signals newsletter, consulting workshops, and governance advisory. All published research is freely accessible. For engagement enquiries, use Engage.
             </Text>
           </div>
         </div>
@@ -174,8 +178,97 @@ const faqData = [
                 Cross-domain futures analysis, framework updates, and foresight signals. Published when substance warrants it, not on a fixed schedule.
               </Text>
               <div class="mt-4 rounded-lg bg-base-100 p-5">
-                <Text tag="p" variant="textSM" class="font-medium text-base-900">Email collection is currently disabled.</Text>
-                <Text tag="p" variant="textXS" class="mt-2 text-base-600">FW.VISION will activate subscriptions after selecting a privacy-reviewed provider with double opt-in and unsubscribe controls. Until then, follow the public <a class="text-accent-700 hover:underline" href="/rss.xml">RSS feed</a> or contact <a class="text-accent-700 hover:underline" href="mailto:francis.wang@fw.vision">francis.wang@fw.vision</a>.</Text>
+                {
+                  subscribeEnabled ? (
+                    <>
+                      <Text tag="p" variant="textSM" class="font-medium text-base-900">
+                        Subscribe to Signals
+                      </Text>
+                      <Text tag="p" variant="textXS" class="mt-2 text-base-600">
+                        Double opt-in. After you subscribe, check your email to confirm. Confirmation mail depends on mail being configured. You can unsubscribe from any message. See the{" "}
+                        <a class="text-accent-700 hover:underline" href="/legal/privacy">
+                          privacy notice
+                        </a>
+                        .
+                      </Text>
+                      <form
+                        id="signals-subscribe-form"
+                        class="mt-4 flex flex-col sm:flex-row gap-2"
+                      >
+                        <label class="sr-only" for="signals-email">Email</label>
+                        <input
+                          id="signals-email"
+                          name="email"
+                          type="email"
+                          required
+                          autocomplete="email"
+                          placeholder="you@example.com"
+                          class="flex-1 min-w-0 rounded-md border border-base-300 bg-white px-3 py-2 text-sm text-base-900"
+                        />
+                        <label class="sr-only" for="signals-name">Name</label>
+                        <input
+                          id="signals-name"
+                          name="name"
+                          type="text"
+                          autocomplete="name"
+                          placeholder="Name (optional)"
+                          class="flex-1 min-w-0 rounded-md border border-base-300 bg-white px-3 py-2 text-sm text-base-900"
+                        />
+                        <Button type="submit" size="xs" variant="accent">
+                          Subscribe
+                        </Button>
+                      </form>
+                      <p id="signals-subscribe-status" class="mt-3 text-xs text-base-600" aria-live="polite"></p>
+                      <script define:vars={{ listmonkUrl, listmonkListUuid }}>
+                        const form = document.getElementById("signals-subscribe-form");
+                        const status = document.getElementById("signals-subscribe-status");
+                        if (form && status) {
+                          form.addEventListener("submit", async (event) => {
+                            event.preventDefault();
+                            status.textContent = "Submitting…";
+                            status.classList.remove("text-accent-700", "text-red-700");
+                            status.classList.add("text-base-600");
+                            const data = new FormData(form);
+                            const email = String(data.get("email") || "").trim();
+                            const name = String(data.get("name") || "").trim();
+                            const payload = {
+                              email,
+                              list_uuids: [listmonkListUuid],
+                            };
+                            if (name) payload.name = name;
+                            try {
+                              const response = await fetch(`${listmonkUrl}/api/public/subscription`, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(payload),
+                              });
+                              if (!response.ok) {
+                                const body = await response.text();
+                                throw new Error(body || `HTTP ${response.status}`);
+                              }
+                              status.classList.remove("text-base-600", "text-red-700");
+                              status.classList.add("text-accent-700");
+                              status.textContent =
+                                "Request received. Check your email to confirm the subscription. If no message arrives, confirmation mail may not be configured yet; email francis.wang@fw.vision.";
+                              form.reset();
+                            } catch (error) {
+                              status.classList.remove("text-base-600", "text-accent-700");
+                              status.classList.add("text-red-700");
+                              status.textContent =
+                                "Subscription could not be completed. Please try again or email francis.wang@fw.vision.";
+                              console.error(error);
+                            }
+                          });
+                        }
+                      </script>
+                    </>
+                  ) : (
+                    <>
+                      <Text tag="p" variant="textSM" class="font-medium text-base-900">Email collection is currently disabled.</Text>
+                      <Text tag="p" variant="textXS" class="mt-2 text-base-600">Follow the public <a class="text-accent-700 hover:underline" href="/rss.xml">RSS feed</a> or contact <a class="text-accent-700 hover:underline" href="mailto:francis.wang@fw.vision">francis.wang@fw.vision</a>.</Text>
+                    </>
+                  )
+                }
               </div>
             </div>
           </section>

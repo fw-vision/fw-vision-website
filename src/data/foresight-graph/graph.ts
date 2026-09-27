@@ -4,8 +4,9 @@ import type { ForesightGraph } from "./types";
  * FW.VISION Foresight Graph - data.
  * Source of truth: 04_Execute/FW.VISION/context/trajectory-storylines.md
  *
- * Sovereign Canada 2075 is fully populated as the showcase. Other storylines
- * are present as nodes (coming-soon) with minimal scenarios.
+ * Sovereign Canada is fully populated as the showcase foresight storyline.
+ * Public Canadian advocacy for the preferred 2080 path lives at Canada2080.org.
+ * Other storylines are present as nodes (coming-soon) with minimal scenarios.
  */
 export const foresightGraph: ForesightGraph = {
   nodes: [
@@ -19,7 +20,7 @@ export const foresightGraph: ForesightGraph = {
       horizons: ["H2", "H3"],
       status: "showcase",
       ambition:
-        "An economically sovereign Canada that becomes a global economic leader by 2075, keeping the value of its research and talent at home.",
+        "Canada compounds energy, compute, production depth, and control rights into durable domestic capability toward late-century sovereignty. Public advocacy: Canada2080.",
     },
     { kind: "storyline", id: "sl-finding-singularity", slug: "finding-singularity", slogan: "Finding Singularity", domainSeries: ["Future of Health"], horizons: ["H3", "H4"], status: "coming-soon", ambition: "Precision and preventative health advancing toward biological immortality." },
     { kind: "storyline", id: "sl-living-planet", slug: "the-living-planet", slogan: "The Living Planet", domainSeries: ["Climate"], horizons: ["H2", "H3", "H4"], status: "coming-soon", ambition: "A regenerated, resilient planet, extending to terraforming and terrascaping." },
@@ -33,8 +34,8 @@ export const foresightGraph: ForesightGraph = {
     { kind: "scenario", id: "sc-sc-grid", label: "Resilient sovereign grid", description: "A resilient energy grid with storage and micro-grids underpins compute and industry. Globally replicable pattern.", likelihood: "plausible", horizon: "H1.5", datorTrajectory: "growth", angle: 55 },
     { kind: "scenario", id: "sc-sc-food", label: "Food independence reached", description: "Controlled-environment agriculture closes staple-crop import dependency. Globally replicable.", likelihood: "plausible", horizon: "H2", datorTrajectory: "growth", angle: 80 },
     { kind: "scenario", id: "sc-sc-industry", label: "Industry 4.0+ capacity rebuilt", description: "Domestic advanced manufacturing and robotics rebuild industrial capacity and exports.", likelihood: "plausible", horizon: "H2", datorTrajectory: "transform", angle: 40 },
-    { kind: "scenario", id: "sc-sc-talent", label: "Talent drain reverses", description: "Skilled workers stay as domestic ventures become worth staying for; the 1.2M annual entries to the US reverse.", likelihood: "possible", horizon: "H2", datorTrajectory: "transform", angle: 20 },
-    { kind: "scenario", id: "sc-sc-leader", label: "Global economic leader", description: "Canada is an economically sovereign global leader in the industries that make a nation independent.", likelihood: "possible", horizon: "H3", datorTrajectory: "transform", angle: 35 },
+    { kind: "scenario", id: "sc-sc-talent", label: "Opportunity structure holds talent", description: "Skilled people stay, return, or circulate when domestic ventures and missions create ambitious roles — not when education volume alone rises.", likelihood: "possible", horizon: "H2", datorTrajectory: "transform", angle: 20 },
+    { kind: "scenario", id: "sc-sc-leader", label: "Trusted contribution", description: "Canada exercises selective strategic choice with public value, resilience, and reinvestment — measured as capability, not unqualified ranking.", likelihood: "possible", horizon: "H3", datorTrajectory: "transform", angle: 35 },
 
     // ---- Sovereign Canada off-ramp (failure path) ----
     { kind: "scenario", id: "sc-sc-dependency", label: "Continued dependency", description: "Talent, compute, and IP stay foreign-controlled; sovereignty is nominal. The trajectory collapses into managed decline.", likelihood: "probable", horizon: "H2", datorTrajectory: "discipline", angle: 130 },
